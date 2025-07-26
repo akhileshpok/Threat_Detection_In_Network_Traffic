@@ -13,11 +13,7 @@ Explore our Jupyter notebooks with in-depth analysis and insights:
 - **En español: modelo y conclusiones** – Spanish version with key findings and model details.
 
 ---
-
-## 🔑 Key Features Considered
-- Linguistic background (e.g., native language, multilingualism)  
-- Demographic factors (e.g., age of arrival, length of residence)  
-- Education & Enrollment (e.g., formal schooling, participation in Dutch courses)  
+  
 
 ---
 
@@ -47,7 +43,7 @@ The project follows a structured machine learning pipeline:
 
 ---
 
-## 🎯 Business & Policy Recommendations
+## 🎯 Business  Recommendations
 To improve Dutch language proficiency among learners, policymakers and educators should consider:
 
 - ✅ Increasing accessibility and funding for Dutch language courses – Since formal enrollment is the strongest predictor of proficiency.  

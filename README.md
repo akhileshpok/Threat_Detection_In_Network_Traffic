@@ -1,6 +1,6 @@
 # 🗣️ Threat Detection in Network Traffic
 
-## 📌 Project Overview
+## 🚀  Project Overview
 This project is an advanced cybersecurity solution that uses machine learning to protect networks from attacks. The system employs two different models:
 
 - A **binary classifier** that acts as the first line of defense by accurately separating normal network activity from malicious threats.
@@ -11,7 +11,7 @@ The models are highly effective, demonstrating exceptional performance in distin
 
 ---
 
-## 📌 Business Goals
+## 🎯 Business Goals
 - **Risk Mitigation:**  
   The project protects the business from financial loss, data breaches, and service downtime by enabling the early and accurate detection of cyber threats.
 - **Operational Efficiency:**  
@@ -21,19 +21,19 @@ The models are highly effective, demonstrating exceptional performance in distin
 - **Strategic Advantage:**  
   The insights gained from the models help the business understand its unique threat landscape, enabling proactive security decisions and a more resilient defense against evolving attacks.
 
+---
 
-## 📖 Notebooks
-Explore our Jupyter notebooks with in-depth analysis and insights:
+## 📖 Jupyter Notebooks
+Explore my Jupyter notebooks with in-depth analysis and insights:
 
-- **Model and insights** – Data analysis, feature engineering, and model building.
-- **Ideas for implementation** – How this research can be applied in real-world settings.
-- **En español: modelo y conclusiones** – Spanish version with key findings and model details.
+- [Data Prep Script](relative/path/to/file) -
+- [BinaryClass ML pipeline](relative/path/to/file) - Notebook describing the Binary Class. 
+- [MultiClass ML pipeline](relative/path/to/file) - 
 
 ---
   
 
-
-## 🚀 Project Workflow
+## ⚙️ Project Workflow
 The project follows a structured machine learning pipeline:
 
 1. Data Loading – Load and preprocess the dataset.  
@@ -50,6 +50,7 @@ The project follows a structured machine learning pipeline:
 ---
 
 ## 📊 Dataset Datasheet
+[Datasheet](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md)
 
 ## 📊 Model Card
 

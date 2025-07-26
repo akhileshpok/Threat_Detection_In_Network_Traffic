@@ -1,85 +1,83 @@
 # CICIDS2017 Dataset Datasheet
 
-## Overview
+## Dataset Description
 
-The CICIDS2017 dataset is a publicly available benchmark dataset created by the Canadian Institute for Cybersecurity. It contains realistic network traffic data capturing benign and malicious activities for intrusion detection system research. The dataset includes labeled records representing multiple attack types and normal traffic.
+The CICIDS2017 dataset is a publicly available network intrusion detection dataset created by the Canadian Institute for Cybersecurity. It contains anonymized network traffic data collected over several days, featuring both benign and malicious flows, simulating real-world network conditions.
+
+The dataset was designed to provide a comprehensive benchmark for intrusion detection systems (IDS) and machine learning models aimed at detecting cyber attacks.
 
 ## Motivation
 
-The dataset was designed to provide a comprehensive and realistic network intrusion detection dataset with diverse attack scenarios and up-to-date traffic patterns. It aims to support research in network security, anomaly detection, and machine learning-based intrusion detection.
+The dataset was created to facilitate research on network intrusion detection by providing realistic, labeled traffic data that includes a variety of attack types alongside normal traffic, allowing for the development and evaluation of effective detection techniques.
 
-## Composition
+## Dataset Composition
 
-- Contains network traffic data with approximately 3.1 million records.
-- Each record is labeled as benign or one of several attack types:
-  - Benign
-  - Brute Force
-  - Botnet
-  - DDoS
-  - DoS
-  - Web Attacks
-  - Infiltration
-  - Port Scan
-  - Heartbleed
-- Data size: Around 10 GB total (depending on subset).
-- Features include flow-based statistics such as duration, packet counts, byte counts, and more.
+- **Instances:** Approximately 2.8 million network flows.
+- **Features:** Over 80 features per flow, including flow duration, protocol, source/destination IP and ports, packet counts, bytes, and various statistical features.
+- **Labels:** Each flow is labeled as benign or belonging to one of several attack categories.
 
-## Distribution
+## Labels and Class Distribution
 
-- Benign traffic: ~2,830,000 records (91%)
-- DDoS: ~280,000 records (9%)
-- Other attacks: Smaller proportions, from a few hundred to a few thousand records per type.
-- Dataset is distributed in CSV format with labeled flows.
-- Dataset is publicly available via the Canadian Institute for Cybersecurity website and mirrors such as Kaggle.
+The dataset's primary target is to classify network flows as either benign or malicious.
 
-## Collection Process
+- **Primary Target:** Binary classification (Benign vs. Attack).
+- **Original Labels:** The dataset originally contains 15 distinct labels, including:
+  - **Benign:** Normal network traffic.
+  - **Attacks:** PortScan, DoS (GoldenEye, Hulk, Slowhttptest, Slowloris), DDoS, SSH-Patator, FTP-Patator, Web Attack (Brute Force, SQL Injection, XSS), Infiltration, Bot, and Heartbleed.
 
-- Data was captured using a real testbed network environment simulating both normal user behavior and malicious activities.
-- Network traffic was generated over several days in July 2017.
-- Attacks were launched in a controlled manner to mimic real-world scenarios.
-- Tools such as CICFlowMeter were used to extract flow-based features from raw network packets.
+## Data Collection Process
+
+The data was collected using network traffic capture tools over multiple days in a controlled environment with simulated attacks to reflect realistic network behavior. The attackers and benign users generated traffic simultaneously to mimic real network conditions.
 
 ## Preprocessing and Cleaning
 
-- Raw network packet captures (pcap files) were processed to generate flow statistics.
-- Anonymization was applied to IP addresses to protect privacy.
-- Incomplete or corrupted flows were removed.
-- Labels were assigned based on timestamps and attack scenarios.
+- Anonymization of sensitive information (e.g., IP addresses).
+- Removal of incomplete or corrupted flows.
+- Labeling of flows based on attack type.
+- Handling of missing and infinite values as needed for model training.
 
-## Uses
+## Key Characteristics & Challenges
 
-- Primarily used for training and evaluating intrusion detection systems (IDS).
-- Useful for anomaly detection, classification, and cybersecurity research.
-- Can support benchmarking of machine learning models on network security tasks.
-- Suitable for educational purposes and tutorials on network traffic analysis.
-
-## Maintenance
-
-- Dataset was created and maintained by the Canadian Institute for Cybersecurity.
-- No official updates have been released since initial publication in 2017.
-- Community contributions and derived datasets exist but are maintained independently.
+- **Severe Class Imbalance:** Approximately 80% of the data is benign traffic, while the remaining 20% represents various types of attacks. This imbalance necessitates evaluation metrics like F1-score, ROC AUC, and Average Precision over simple accuracy.
+- **Redundancy and Duplication:** The dataset contains a high number of duplicate or redundant flow records, which can impact model training and validation.
+- **Feature Complexity:** The dataset features a mix of numerical, categorical, and time-series-like data (e.g., flow duration, timestamp), challenging for various machine learning approaches.
+- **Missing Values:** Some missing and infinite values exist, requiring careful preprocessing.
 
 ## Ethical Considerations
 
-- All personally identifiable information (PII) was anonymized before dataset release.
-- The dataset simulates malicious activity in a controlled environment; no real user data was compromised.
-- Users should consider ethical implications when applying the dataset to real-world scenarios.
-- Proper attribution to dataset creators is required.
+- **Privacy:** The dataset contains anonymized network traffic data. All personally identifiable information (PII) such as IP addresses has been anonymized to protect the privacy of individuals and organizations.
+- **Consent:** The data was collected in controlled environments with simulated attacks, minimizing risks related to consent. However, users of the dataset should ensure compliance with local laws and regulations when applying or sharing derived models.
+- **Usage Restrictions:** The dataset is intended solely for research and educational purposes in cybersecurity. It should not be used to facilitate malicious activities or unauthorized network intrusions.
+- **Bias and Fairness:** The dataset reflects specific network environments and attack types which may not generalize to all real-world networks, potentially limiting the fairness and effectiveness of models trained solely on this data.
+- **Responsible Use:** Researchers are encouraged to consider the implications of deploying models trained on this data, especially regarding false positives/negatives, and the potential impact on real network users.
 
-## Licensing and Access
 
-- The dataset is freely available for academic and research use.
-- License terms can be found on the CIC website: https://www.unb.ca/cic/datasets/ids-2017.html
-- Redistribution is permitted with attribution; commercial use may require permission.
+## Distribution
 
-## Limitations
+The dataset is publicly available on the Canadian Institute for Cybersecurity website and on Kaggle. The data can be downloaded in CSV format for ease of use with machine learning frameworks.
 
-- Dataset reflects network conditions and attack patterns from 2017; may not fully represent modern traffic.
-- Imbalanced class distribution with majority benign traffic.
-- Attack types do not cover all possible real-world threats.
-- Some flows may not capture full attack payloads.
-- Results using this dataset may not generalize perfectly to production networks.
+## Usage
+
+The dataset is commonly used for benchmarking intrusion detection algorithms, machine learning model training, and cybersecurity research.
+
+## Citation
+
+If you use this dataset, please cite the original creators:
+
+> Zeidanloo, H. R., & Manaf, A. A. (2017). CICIDS2017 Dataset: Canadian Institute for Cybersecurity Intrusion Detection Dataset.  
+> Schepens, J., van Hout, R., & Jaeger, S. (2020). CICIDS2017: Intrusion Detection Data Set. Available on [Kaggle](https://www.kaggle.com/datasets/).
+
+## License
+
+Please check the dataset's official page for licensing terms. Typically, this dataset is available for research and educational use.
+
+## Additional Notes
+
+- Preprocessing is essential due to missing and infinite values.
+- Handling class imbalance improves model reliability.
+- Feature engineering may be required to optimize performance.
 
 ---
 
+*This datasheet is intended to provide a thorough understanding of the CICIDS2017 dataset for researchers and practitioners in cybersecurity and machine learning.*
 *For more information, visit the Canadian Institute for Cybersecurity’s official CICIDS2017 page: https://www.unb.ca/cic/datasets/ids-2017.html*

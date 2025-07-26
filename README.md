@@ -33,6 +33,10 @@ The project follows a structured machine learning pipeline:
 
 ---
 
+## 📊 Dataset Datasheet
+
+## 📊 Model Card
+
 ## 📊 Key Findings
 - Enrollment in Dutch language courses is the strongest predictor of speaking proficiency. Structured learning is significantly more effective than passive exposure.  
 - Native speakers of Germanic languages (e.g., German, English, Swedish) perform best, while non-Germanic Indo-European and non-Indo-European speakers face greater challenges.  
@@ -43,7 +47,7 @@ The project follows a structured machine learning pipeline:
 
 ---
 
-## 🎯 Business  Recommendations
+## 🎯 Business Recommendations
 To improve Dutch language proficiency among learners, policymakers and educators should consider:
 
 - ✅ Increasing accessibility and funding for Dutch language courses – Since formal enrollment is the strongest predictor of proficiency.  
@@ -63,10 +67,20 @@ To improve Dutch language proficiency among learners, policymakers and educators
 ---
 
 ## 🛠️ Tech Stack
-- **Python:** pandas, NumPy, scikit-learn, SHAP  
-- **Data Visualization:** Matplotlib, Seaborn  
-- **Machine Learning Techniques:** Linear Regression, Lasso Regression, Decision Trees, Random Forest, Gradient Boosting, XGBoost, Neural Networks  
-- **Model Evaluation Metrics:** RMSE, R² Score, Cross-Validation  
-- **Feature Engineering:** One-Hot Encoding, Scaling, Dimensionality Reduction  
-- **Web Application & Deployment:** Flask, Jinja2, OpenAI API, Pickle  
+- **Python & Libraries:**  
+Python, pandas, NumPy, scikit-learn, XGBoost, SHAP, joblib, Optuna, PyTorch
+- **Machine Learning Models:**  
+Logistic Regression, Random Forest Classifier, XGBoost Classifier, Stacking Classifier, Feedforward Neural Networks (FFN), Long Short-Term Memory Networks (LSTM)
+- **Model Evaluation Metrics:**  
+F1-Score (for Positive Class), ROC AUC, Average Precision, Precision, Recall
+- **Model Interpretation & Explainability:**  
+SHAP, Feature Importance (for tree-based models), Confusion Matrix
+- **Feature Engineering:**  
+Handling Missing/Infinite Values, Data Scaling (StandardScaler), Dimensionality Reduction (PCA), One-Hot Encoding
+- **Data Visualization:**  
+Matplotlib, Seaborn
+- **Model Persistence:**  
+Joblib, Pickle
+
+
 

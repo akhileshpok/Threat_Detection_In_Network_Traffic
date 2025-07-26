@@ -1,9 +1,26 @@
 # 🗣️ Threat Detection in Network Traffic
 
 ## 📌 Project Overview
+This project is an advanced cybersecurity solution that uses machine learning to protect networks from attacks. The system employs two different models:
+
+- A **binary classifier** that acts as the first line of defense by accurately separating normal network activity from malicious threats.
+- A **multiclass classifier** that identifies the specific type of attack (e.g., DoS, PortScan, etc.).
+
+The models are highly effective, demonstrating exceptional performance in distinguishing between benign and malicious traffic. They are designed to minimize false alarms while maintaining a very high rate of successful detection, providing security teams with a reliable and powerful tool to defend against modern cyber threats.
 
 
 ---
+
+## 📌 Business Goals
+- **Risk Mitigation:**  
+  The project protects the business from financial loss, data breaches, and service downtime by enabling the early and accurate detection of cyber threats.
+- **Operational Efficiency:**  
+  The machine learning models reduce false alarms and provide a clear classification of attacks, allowing security teams to respond faster and more effectively.
+- **Compliance & Reputation:**  
+  By demonstrating a robust cybersecurity posture, the project helps the organization comply with regulations and builds trust with customers and stakeholders.
+- **Strategic Advantage:**  
+  The insights gained from the models help the business understand its unique threat landscape, enabling proactive security decisions and a more resilient defense against evolving attacks.
+
 
 ## 📖 Notebooks
 Explore our Jupyter notebooks with in-depth analysis and insights:
@@ -15,7 +32,6 @@ Explore our Jupyter notebooks with in-depth analysis and insights:
 ---
   
 
----
 
 ## 🚀 Project Workflow
 The project follows a structured machine learning pipeline:
@@ -50,25 +66,24 @@ The project follows a structured machine learning pipeline:
 ## 🎯 Business Recommendations
 To improve Dutch language proficiency among learners, policymakers and educators should consider:
 
-- ✅ Increasing accessibility and funding for Dutch language courses – Since formal enrollment is the strongest predictor of proficiency.  
-- ✅ Offering tailored curricula for high-risk language groups – Non-Indo-European speakers (e.g., Arabic, Chinese, Turkish) face significant challenges.  
-- ✅ Promoting early exposure programs – Younger arrivals have better outcomes; early intervention can boost long-term success.  
-- ✅ Encouraging multilingual education – Bilingual individuals perform better, suggesting benefits to fostering multilingual skills.  
-- ✅ Focusing on active language learning over general schooling – Dutch language training is far more effective than formal education alone.  
+
 
 ---
 
-## 🔬 Future Work
-- Expand data collection to include more diverse linguistic backgrounds.  
-- Investigate motivational and socioeconomic factors influencing proficiency.  
-- Conduct a longitudinal study to track language acquisition before and after course enrollment.  
-- Enhance predictive models using AI for personalized language learning plans.  
+## 🔬 Future Work & Enhancements
+### Model Optimization
+Explore more sophisticated deep learning architectures like CNNs and advanced ensemble techniques to further improve the performance of both the binary and multiclass classifiers.
+### Data & Feature Refinement
+Develop new, domain-specific features and use advanced feature selection methods to enhance model efficiency and interpretability. Additionally, investigate cost-sensitive learning or other advanced resampling techniques to better handle the dataset's class imbalance.
+### Productionization
+Focus on building a complete, end-to-end deployment pipeline that includes real-time inference, model monitoring, and automated retraining to move the project from a proof-of-concept to a practical, operational solution.
+  
 
 ---
 
 ## 🛠️ Tech Stack
 - **Python & Libraries:**  
-Python, pandas, NumPy, scikit-learn, XGBoost, SHAP, joblib, Optuna, PyTorch
+Python, pandas, NumPy, scikit-learn, XGBoost, SMOTE, SHAP, joblib, Optuna, PyTorch
 - **Machine Learning Models:**  
 Logistic Regression, Random Forest Classifier, XGBoost Classifier, Stacking Classifier, Feedforward Neural Networks (FFN), Long Short-Term Memory Networks (LSTM)
 - **Model Evaluation Metrics:**  

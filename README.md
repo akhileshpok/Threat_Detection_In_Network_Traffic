@@ -24,9 +24,9 @@ The models are highly effective, demonstrating exceptional performance in distin
 ---
 
 ## 📖 Jupyter Notebooks
-Explore my Jupyter notebooks with in-depth analysis, plots and insights:
+Explore the Jupyter notebooks for this project with Python code, including comments, results and in-depth analysis, including plots and insights:
 
-- [Data Prep Script](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/Capstone_project_data_prep.ipynb) - Notebook for data preparation.
+- [Data Prep Script](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/Capstone_project_data_prep.ipynb) - This Python script automates the full data preparation and cleaning pipeline for the CICIDS2017 dataset. The code first loads all of the daily CSV files, combines them into a single large DataFrame, and performs initial cleaning steps like standardizing column names and handling infinite or missing values. Finally, it creates two separate, ready-to-use datasets: one for a multiclass classification task that preserves the original attack types, and a second for a binary classification task where all attacks are simplified to a single "malicious" label.
 - [BinaryClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_BinaryClass_Pipeline.ipynb) - Notebook for the Binary Class ML pipeline. 
 - [MultiClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_MultiClass_Pipeline.ipynb) - Notebook forthe Multi-Class ML pipeline.
 
@@ -34,18 +34,78 @@ Explore my Jupyter notebooks with in-depth analysis, plots and insights:
   
 
 ## ⚙️ Project Workflow
-The project follows a structured machine learning pipeline:
 
-1. Data Loading – Load and preprocess the dataset.  
-2. Exploratory Data Analysis – Identify trends, correlations, and distributions.  
-3. Train/Test Split – Partition the dataset for model evaluation.  
-4. Feature Engineering – Transform categorical and numerical features.  
-5. Regression Modeling – Train multiple regression models.  
-6. Hyperparameter Tuning – Optimize models for better performance.  
-7. Model Selection – Choose the best-performing model.  
-8. Model Interpretation – Use SHAP values to explain feature importance.  
-9. Results & Analysis – Evaluate model accuracy and key findings.  
-10. Model Deployment – Save and export the trained model.  
+### CICIDS2017 Binary Classification Pipeline:
+
+This project implements a complete machine learning pipeline to detect network intrusions using the CICIDS2017 dataset. The pipeline is composed of the following stages:
+
+---
+
+#### 1. Data Loading
+- Loads a pre-processed subset of the CICIDS2017 dataset.
+- Ensures that the label column is binary: `"BENIGN"` or `"ATTACK"`.
+- Uses `LabelEncoder` to convert categorical labels into numeric format.
+
+#### 2. Exploratory Data Analysis (EDA)
+- Examines class distribution to detect imbalance.
+- Summarizes dataset statistics (mean, variance, etc.).
+- Confirms there are no missing values or NaNs.
+
+#### 3. Train/Test Split
+- Splits the dataset into:
+  - **Training set**
+  - **Validation set**
+  - **Test set**
+- Applies stratified sampling to maintain label balance across splits.
+
+#### 4. Feature Engineering
+- **Standard Scaling:** Normalizes features using `StandardScaler`.
+- **Dimensionality Reduction:** Reduces feature dimensionality with Principal Component Analysis (PCA).
+- **Class Imbalance Handling:** Uses SMOTE to synthetically balance the training dataset.
+
+#### 5. Classification Task: ML Modeling
+Trains and evaluates the following models:
+- **Dummy Classifier:** Serves as a naive baseline for comparison.
+- **Logistic Regression**
+- **Random Forest**
+- **XGBoost**
+- **Feedforward Neural Network (FFN)**
+- **Long Short-Term Memory (LSTM)**
+- **Stacking Classifier:** An ensemble model that combines predictions from Logistic Regression, Random Forest, and XGBoost using a meta-learner for improved performance.
+
+#### 6. Hyperparameter Tuning
+- **(a)** Uses `GridSearchCV` to tune hyperparameters for Logistic Regression, Random Forest, and XGBoost.
+- **(b)** Trains the Stacking Classifier using tuned base learners and a meta-classifier.
+- **(c)** Applies `Optuna` to tune the Feedforward Neural Network (FFN).
+- **(d)** Uses `Optuna` to optimize the LSTM model for temporal feature learning.
+
+#### 7. Comparative Performance Evaluation
+- Assesses all models on validation and test sets using:
+  - Accuracy, Precision, Recall, F1-score (macro & weighted)
+  - Confusion Matrix
+  - ROC and Precision-Recall curves
+- Visualizes metric comparisons using bar charts and performance plots.
+
+#### 8. Model Selection
+- Selects the best model based on macro-averaged F1-score.
+- Logs the final model name and saves its predictions and probabilities.
+
+#### 9. Model Interpretation
+- Uses the `SHAP` library to interpret predictions of the best model.
+- Generates:
+  - **Global feature importance** via summary plots.
+  - **Local explanations** using SHAP force plots.
+- Applies interpretation on PCA-transformed features with generic names.
+
+#### 10. Save the Best Model
+- Saves the complete pipeline using `joblib` and `numpy`, including:
+  - Trained best model
+  - `StandardScaler`, `PCA` transformer, and `LabelEncoder`
+  - Final predicted labels and probability distributions
+
+#### 11. Implementation (Deployment Readiness)
+- Demonstrates how to reload all saved components to make predictions on unseen or real-time data.
+- Ensures the pipeline is production-ready, modular, and reproducible.
 
 ---
 

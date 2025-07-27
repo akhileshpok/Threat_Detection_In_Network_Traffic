@@ -27,8 +27,8 @@ The models are highly effective, demonstrating exceptional performance in distin
 Explore the Jupyter notebooks for this project with Python code, including comments, results and in-depth analysis, including plots and insights:
 
 - [Data Prep Script](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/Capstone_project_data_prep.ipynb) - This Python script automates the full data preparation and cleaning pipeline for the CICIDS2017 dataset. The code first loads all of the daily CSV files, combines them into a single large DataFrame, and performs initial cleaning steps like standardizing column names and handling infinite or missing values. Finally, it creates two separate, ready-to-use datasets: one for a multiclass classification task that preserves the original attack types, and a second for a binary classification task where all attacks are simplified to a single "malicious" label.
-- [BinaryClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_BinaryClass_Pipeline.ipynb) - Notebook for the Binary Class ML pipeline. 
-- [MultiClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_MultiClass_Pipeline.ipynb) - Notebook forthe Multi-Class ML pipeline.
+- [BinaryClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_BinaryClass_Pipeline.ipynb) - Notebook with the Python code for the Binary Class ML pipeline. It includes all stages of the pipeline that are described in the **Project Workflow** section. 
+- [MultiClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_MultiClass_Pipeline.ipynb) - Notebook with the Python code for the Multi-Class ML pipeline. It includes all stages of the pipeline that are described in the **Project Workflow** section.
 
 ---
   

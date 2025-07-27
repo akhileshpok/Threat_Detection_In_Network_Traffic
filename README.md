@@ -39,8 +39,6 @@ Explore the Jupyter notebooks for this project with Python code, including comme
 
 This project implements a complete machine learning pipeline to detect network intrusions using the CICIDS2017 dataset. The pipeline is composed of the following stages:
 
----
-
 #### 1. Data Loading
 - Loads a pre-processed subset of the CICIDS2017 dataset.
 - Ensures that the label column is binary: `"BENIGN"` or `"ATTACK"`.
@@ -76,8 +74,8 @@ Trains and evaluates the following models:
 #### 6. Hyperparameter Tuning
 - **(a)** Uses `GridSearchCV` to tune hyperparameters for Logistic Regression, Random Forest, and XGBoost.
 - **(b)** Trains the Stacking Classifier using tuned base learners and a meta-classifier.
-- **(c)** Applies `Optuna` to tune the Feedforward Neural Network (FFN).
-- **(d)** Uses `Optuna` to optimize the LSTM model for temporal feature learning.
+- **(c)** Applies the `Optuna` library to tune the Feedforward Neural Network (FFN).
+- **(d)** Uses the `Optuna` library to optimize the LSTM model for temporal feature learning.
 
 #### 7. Comparative Performance Evaluation
 - Assesses all models on validation and test sets using:

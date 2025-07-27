@@ -24,11 +24,11 @@ The models are highly effective, demonstrating exceptional performance in distin
 ---
 
 ## 📖 Jupyter Notebooks
-Explore my Jupyter notebooks with in-depth analysis and insights:
+Explore my Jupyter notebooks with in-depth analysis, plots and insights:
 
-- [Data Prep Script](relative/path/to/file) -
-- [BinaryClass ML pipeline](relative/path/to/file) - Notebook describing the Binary Class. 
-- [MultiClass ML pipeline](relative/path/to/file) - 
+- [Data Prep Script](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/Capstone_project_data_prep.ipynb) - Notebook for data preparation.
+- [BinaryClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_BinaryClass_Pipeline.ipynb) - Notebook for the Binary Class ML pipeline. 
+- [MultiClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_MultiClass_Pipeline.ipynb) - Notebook forthe Multi-Class ML pipeline.
 
 ---
   

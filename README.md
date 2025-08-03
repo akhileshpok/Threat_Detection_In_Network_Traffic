@@ -80,11 +80,12 @@ Trains and evaluates the following models:
 - **Long Short-Term Memory (LSTM)**
 - **Stacking Classifier:** An ensemble model that combines predictions from Logistic Regression, Random Forest, and XGBoost using a meta-learner for improved performance.
 
-#### 6. Hyperparameter Tuning
-- **(a)** Uses `GridSearchCV` to tune hyperparameters for Logistic Regression, Random Forest, and XGBoost.
-- **(b)** Trains the Stacking Classifier using tuned base learners and a meta-classifier.
-- **(c)** Applies the `Optuna` library to tune the Feedforward Neural Network (FFN).
-- **(d)** Uses the `Optuna` library to optimize the LSTM model for temporal feature learning.
+#### 6. Hyperparameter Tuning (Expland)
+- **(a)** Binary classification - Uses `GridSearchCV` to tune hyperparameters for Logistic Regression, Random Forest & XGBoost models.
+- **(b)** Multi-Class classification - Uses `Optuna` to tune hyperparameters for XGBoost model.
+- **(c)** Trains the Stacking Classifier using tuned base learners and a meta-classifier.
+- **(d)** Applies the `Optuna` library to tune the Feedforward Neural Network (FFN).
+- **(e)** Uses the `Optuna` library to optimize the LSTM model for temporal feature learning.
 
 #### 7. Comparative Performance Evaluation
 - Assesses all models on validation and test sets using:
@@ -120,7 +121,9 @@ Trains and evaluates the following models:
 The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
 
 ## 🧠 Model Card
-The Model Card for this project is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card.md).
+The Model Card for the Binary Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_binary.md).
+
+The Model Card for the Multi-class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).
 
 ## 💡 Key Findings
 - Enrollment in Dutch language courses is the strongest predictor of speaking proficiency. Structured learning is significantly more effective than passive exposure.  

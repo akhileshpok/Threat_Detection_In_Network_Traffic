@@ -110,10 +110,10 @@ Trains and evaluates the following models:
 ## 📊 CICIDS2017 Dataset Datasheet
 The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
 
-## 📊 Model Card
+## 🧠 Model Card
 The Model Card for this project is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card.md).
 
-## 📊 Key Findings
+## 💡 Key Findings
 - Enrollment in Dutch language courses is the strongest predictor of speaking proficiency. Structured learning is significantly more effective than passive exposure.  
 - Native speakers of Germanic languages (e.g., German, English, Swedish) perform best, while non-Germanic Indo-European and non-Indo-European speakers face greater challenges.  
 - Monolingual individuals struggle more, whereas those with a second language, especially a Germanic one, have an advantage.  
@@ -123,7 +123,7 @@ The Model Card for this project is available [here](https://github.com/akhileshp
 
 ---
 
-## 🎯 Business Recommendations
+## 🤝 Business Recommendations
 To improve Dutch language proficiency among learners, policymakers and educators should consider:
 
 

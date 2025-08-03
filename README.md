@@ -107,11 +107,11 @@ Trains and evaluates the following models:
 
 ---
 
-## 📊 Dataset Datasheet
-The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md)
+## 📊 CICIDS2017 Dataset Datasheet
+The Datasheet for the publicly available CICIDS2017 dataset is available [here].(https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md)
 
 ## 📊 Model Card
-The Model Card for this project is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card.md)
+The Model Card for this project is available [here].(https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card.md)
 
 ## 📊 Key Findings
 - Enrollment in Dutch language courses is the strongest predictor of speaking proficiency. Structured learning is significantly more effective than passive exposure.  

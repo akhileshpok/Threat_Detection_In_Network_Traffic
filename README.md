@@ -4,7 +4,7 @@
 This project is an advanced cybersecurity solution that uses machine learning to protect networks from attacks. The system employs two different models:
 
 - A **binary classifier** that acts as the first line of defense by accurately separating normal network activity from malicious threats.
-- A **multiclass classifier** that identifies the specific type of attack (e.g., DoS, PortScan, etc.).
+- A **multi-class classifier** that identifies the specific type of attack (e.g., DoS, PortScan, etc.).
 
 The models are highly effective, demonstrating exceptional performance in distinguishing between benign and malicious traffic. They are designed to minimize false alarms while maintaining a very high rate of successful detection, providing security teams with a reliable and powerful tool to defend against modern cyber threats.
 
@@ -120,7 +120,7 @@ Trains and evaluates the following models:
 ## 📊 CICIDS2017 Dataset Datasheet
 The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
 
-## 🧠 Model Card
+## 🧠 Model Cards
 The Model Card for the Binary Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_binary.md).
 
 The Model Card for the Multi-class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).

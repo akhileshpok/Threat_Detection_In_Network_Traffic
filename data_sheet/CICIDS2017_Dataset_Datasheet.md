@@ -60,7 +60,7 @@ The dataset is publicly available on the Canadian Institute for Cybersecurity we
 
 The dataset is commonly used for benchmarking intrusion detection algorithms, machine learning model training, and cybersecurity research.
 
-### Maintenance
+## Maintenance
 
 The CICIDS2017 dataset is maintained by the Canadian Institute for Cybersecurity (CIC) at the University of New Brunswick. It is a static dataset, and no versioned updates or maintenance cycles have been published since its release.
 

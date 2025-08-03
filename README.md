@@ -48,16 +48,12 @@ This project implements two complete machine learning pipelines to detect networ
 #### 2. Exploratory Data Analysis (EDA)
 - **Initial Data Inspection**  
   Displays the first few rows of the dataset, data types, non-null counts, and descriptive statistics for numerical features.
-
 - **Data Quality Checks**  
   Identifies and reports any missing values and unique values per feature.
-
 - **Target Variable Analysis**  
   Visualizes the class distribution of the target variable (`label_final_display`) to check for class imbalance.
-
 - **Feature Distributions**  
   Plots histograms and box plots for key numerical features to understand their distributions and identify potential outliers.
-
 - **Relationship Analysis**  
   Generates a correlation heatmap to show the relationships between all numerical features and creates a pair plot to visualize relationships between a selected subset of features, colored by the target class.
 

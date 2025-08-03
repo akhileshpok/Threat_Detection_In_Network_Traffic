@@ -35,19 +35,32 @@ Explore the Jupyter notebooks for this project containing the Python code for th
 
 ## ⚙️ Project Workflow
 
-### CICIDS2017 Binary Classification Pipeline:
+### CICIDS2017 Binary Classification, Multi-Class Classicification Pipelines:
 
-This project implements a complete machine learning pipeline to detect network intrusions using the CICIDS2017 dataset. The pipeline is composed of the following stages:
+This project implements two complete machine learning pipelines to detect network intrusions using the CICIDS2017 dataset. The pipelines are composed of the following stages:
 
 #### 1. Data Loading
-- Loads a pre-processed subset of the CICIDS2017 dataset.
-- Ensures that the label column is binary: `"BENIGN"` or `"ATTACK"`.
-- Uses `LabelEncoder` to convert categorical labels into numeric format.
+- Loads a pre-processed subset of the CICIDS2017 dataset and performs stratified sampling to create a smaller subset for efficient processing.
+- Ensures that the label column is binary: `"BENIGN"` or `"ATTACK"` for the binary classifier.
+- Ensures that the label column has 5 distinct classes for the multi-class classifier. 
+- Uses `LabelEncoder` to convert categorical labels into a numerical format.
 
 #### 2. Exploratory Data Analysis (EDA)
-- Examines class distribution to detect imbalance.
-- Summarizes dataset statistics (mean, variance, etc.).
-- Confirms there are no missing values or NaNs.
+- **Initial Data Inspection**  
+  Displays the first few rows of the dataset, data types, non-null counts, and descriptive statistics for numerical features.
+
+- **Data Quality Checks**  
+  Identifies and reports any missing values and unique values per feature.
+
+- **Target Variable Analysis**  
+  Visualizes the class distribution of the target variable (`label_final_display`) to check for class imbalance.
+
+- **Feature Distributions**  
+  Plots histograms and box plots for key numerical features to understand their distributions and identify potential outliers.
+
+- **Relationship Analysis**  
+  Generates a correlation heatmap to show the relationships between all numerical features and creates a pair plot to visualize relationships between a selected subset of features, colored by the target class.
+
 
 #### 3. Train/Test Split
 - Splits the dataset into:
@@ -125,7 +138,6 @@ The Model Card for this project is available [here](https://github.com/akhileshp
 
 ## 🤝 Business Recommendations
 To improve Dutch language proficiency among learners, policymakers and educators should consider:
-
 
 
 ---

@@ -84,7 +84,7 @@ If you use this dataset, please cite the original creators:
 
 Please check the dataset's official page for licensing terms. Typically, this dataset is available for research and educational use.
 
-## Additional Notes
+### Additional Notes
 
 - Preprocessing is essential due to missing and infinite values.
 - Handling class imbalance improves model reliability.

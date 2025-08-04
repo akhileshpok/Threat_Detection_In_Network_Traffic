@@ -126,20 +126,18 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 - The Model Card for the Multi-class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).
 
 ## 💡 Key Findings
-### Binary Classification
-Key results and findings for the Binary Classifier are presented below;
-
+### Key Results and Findings for the Binary Classifier
 - **ROC Curves Comparison:** 
 <p align="center">
   <a href="Binary ROC Curves">
-    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/roc_curve_comparison.png" alt="Alt text" width="800" />
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/roc_curve_comparison.png" alt="ROC Curves Comparison" width="800" />
   </a>
 </p>
 
 - **Precision Recall Curves Comparison:** 
 <p align="center">
   <a href="Binary PrecRecall Curves">
-    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/precision_recall_curve_comparison.png" alt="Alt text" width="800" />
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/precision_recall_curve_comparison.png" alt="Prec-Recall Curves Comparison" width="800" />
   </a>
 </p>
 
@@ -188,12 +186,19 @@ The top-performing models (**Stacking, Random Forest, XGBoost**) perform excepti
 
 - **Average Precision:** ~0.997 — strong performance even under class imbalance.
 
-The **Deep Learning (DL)** models exhibit decent performance, but not as good as tree-based models. Possible reasons could be:
-  - DL models may require more data or more careful tuning (e.g. learning rates, batch sizes).
-  - Noisy or redundant features may reduce effectiveness.
-  - Overfitting if regularization/dropout wasn’t sufficient.
+The **Deep Learning (DL)** models show decent results but lag behind tree-based methods, possibly due to:
 
-**Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance and it being weak at capturing complex traffic patterns. 
+- Need for more data or refined hyperparameter tuning (learning rate, batch size, etc.).
+- Impact of noisy or redundant features.
+- Potential overfitting from insufficient regularization.
+
+**Logistic Regression** performs poorly, likely because:
+
+- Linear assumptions limit ability to model non-linear patterns.
+- Class imbalance affects performance.
+- It’s less capable of capturing complex traffic behaviors.
+
+Overall, the stacking ensemble offers the best combination of metrics and is the preferred model for deployment in the binary classification task.
 
 ### Multi-Class Classification
 - **ROC Curves Comparison:** 

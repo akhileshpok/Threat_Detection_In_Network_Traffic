@@ -125,6 +125,45 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 
 - The Model Card for the Multi-Class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).
 
+## Hyperparameter Optimisation
+### Binary Classifier
+
+For the selected binary classifier, which is a **Stacking Ensemble**, the hyperparameter optimisation focused on tuning the individual base learners as well as the meta-learner to achieve the best predictive performance.
+
+### Base Learners and Hyperparameters Tuned
+
+**Random Forest (RF):**
+
+- Number of trees (`n_estimators`)  
+- Maximum depth of trees (`max_depth`)  
+- Minimum samples required to split a node (`min_samples_split`)  
+- Criterion for measuring quality of split (`criterion`)  
+
+**XGBoost:**
+
+- Learning rate (`eta`)  
+- Maximum depth of trees (`max_depth`)  
+- Subsample ratio (`subsample`)  
+- Number of boosting rounds (`n_estimators`)  
+
+**Other Base Models (if any):**
+
+- Relevant hyperparameters depending on the specific algorithm used  
+
+#### Meta-Learner
+
+The meta-model (often a Logistic Regression or another lightweight classifier) was tuned for regularization strength (`C`) and solver type to balance bias and variance.
+
+#### Optimisation Strategy
+
+- **Grid Search / Random Search:** Hyperparameter combinations were explored using Grid Search or Randomized Search with cross-validation on the training set.  
+- **Evaluation Metric:** The F1-score for the positive (attack) class was used as the primary metric to balance precision and recall.  
+- **Early Stopping:** For models supporting it (e.g., XGBoost), early stopping was used to prevent overfitting.  
+- **Resource Considerations:** To manage computational cost, the search space was carefully selected based on domain knowledge and prior experiments.  
+
+This systematic tuning helped improve model generalization, achieving an F1-score of 0.9864 on the positive class, with robust performance across other metrics.
+
+
 ## 💡 Key Findings
 ### Key Results and Findings for the Binary Classifier
 - **ROC Curves Comparison:** 

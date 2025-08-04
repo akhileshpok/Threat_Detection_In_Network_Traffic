@@ -149,6 +149,40 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
 | RF (Tuned)        | 0.9862   | 0.9991  | 0.9973        |
 | XGBoost (Untuned) | 0.9672   | 0.9992  | 0.9970        |
 
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>F1 (Pos)</th>
+      <th>ROC AUC</th>
+      <th>Avg Precision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stacking</td>
+      <td>0.9864</td>
+      <td>0.9995</td>
+      <td>0.9979</td>
+    </tr>
+    <tr>
+      <td>RF (Tuned)</td>
+      <td>0.9862</td>
+      <td>0.9991</td>
+      <td>0.9973</td>
+    </tr>
+    <tr>
+      <td>XGBoost (Untuned)</td>
+      <td>0.9672</td>
+      <td>0.9992</td>
+      <td>0.9970</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 The top-performing models (**Stacking, Random Forest, XGBoost**) perform exceptionally well across all key metrics:
 

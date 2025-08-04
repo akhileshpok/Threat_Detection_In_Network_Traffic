@@ -141,6 +141,23 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
   </a>
 </p>
 
+The top-performing models (Stacking, Random Forest, XGBoost) perform exceptionally well across all key metrics:
+
+- **F1-score (Positive Class):** ~0.986 — very high, indicating excellent precision and recall balance.
+
+- **ROC AUC:** ~0.999 — near-perfect ability to separate classes.
+
+- **Average Precision:** ~0.997 — strong performance even under class imbalance.
+
+- The **Deep Learning (DL)** models exhibit decent performance, but not as good as tree-based models. 
+
+Possible reasons:
+
+- DL models may require more data or more careful tuning (e.g. learning rates, batch sizes).
+- Noisy or redundant features may reduce effectiveness.
+- Overfitting if regularization/dropout wasn’t sufficient.
+
+- **Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance. 
 ---
 
 ## 🤝 Business Recommendations

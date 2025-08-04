@@ -193,6 +193,11 @@ The **Deep Learning (DL)** models exhibit decent performance, but not as good as
 
 **Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance and it being weak at capturing complex traffic patterns. 
 
+### Multi-Class Classification
+- **ROC Curves Comparison:** 
+
+- **Precision Recall Curves Comparison:** 
+
 ---
 
 ## 🤝 Business Recommendations

@@ -1,5 +1,7 @@
 # 🗣️ Threat Detection in Network Traffic
 
+---
+
 ## 🚀  Project Overview
 This project is an advanced cybersecurity solution that uses machine learning to protect networks from attacks. The system employs two different models:
 
@@ -261,7 +263,7 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 
 ---
 
-## 🤝 Business Recommendations based on Binary Classifier Performance
+## 🤝 Business Recommendations based on the Binary Classifier Performance
 
 - **Deploy the model** in real-time security systems (e.g., firewalls, IDS, SIEM) to enhance threat detection.
 - **Leverage high accuracy and recall** to minimize false positives and missed attacks.
@@ -270,7 +272,7 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 - **Retrain periodically** with fresh data to keep up with evolving cyber threats.
 - **Monitor model drift** by tracking changes in precision/recall over time and update as needed.
 
-
+## 🤝 Business Recommendations based on Multi-Class Classifier Performance
 
 ---
 

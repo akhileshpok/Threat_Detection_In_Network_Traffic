@@ -141,7 +141,16 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
   </a>
 </p>
 
-The top-performing models (Stacking, Random Forest, XGBoost) perform exceptionally well across all key metrics:
+Top 3 Models:
+
+| Model             | F1 (Pos) | ROC AUC | Avg Precision |
+| ----------------- | -------- | ------- | ------------- |
+| Stacking          | 0.9864   | 0.9995  | 0.9979        |
+| RF (Tuned)        | 0.9862   | 0.9991  | 0.9973        |
+| XGBoost (Untuned) | 0.9672   | 0.9992  | 0.9970        |
+
+
+The top-performing models (**Stacking, Random Forest, XGBoost**) perform exceptionally well across all key metrics:
 
 - **F1-score (Positive Class):** ~0.986 — very high, indicating excellent precision and recall balance.
 
@@ -154,7 +163,7 @@ The **Deep Learning (DL)** models exhibit decent performance, but not as good as
   - Noisy or redundant features may reduce effectiveness.
   - Overfitting if regularization/dropout wasn’t sufficient.
 
-**Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance. 
+**Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance and it being weak at capturing complex traffic patterns. 
 
 ---
 

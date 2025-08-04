@@ -198,7 +198,7 @@ The **Deep Learning (DL)** models show decent results but lag behind tree-based 
 - Class imbalance affects performance.
 - It’s less capable of capturing complex traffic behaviors.
 
-Overall, the stacking ensemble offers the best combination of metrics and is the preferred model for deployment in the binary classification task.
+Overall, the **Stacking Ensemble** offers the best combination of metrics and is the preferred model for deployment in the binary classification task.
 
 ### Multi-Class Classification
 - **ROC Curves Comparison:** 

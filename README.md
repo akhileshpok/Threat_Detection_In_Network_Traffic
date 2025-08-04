@@ -125,7 +125,9 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 
 - The Model Card for the Multi-Class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).
 
-## Hyperparameter Optimisation
+---
+
+## 🎛️ Hyperparameter Optimisation
 ### Binary Classifier
 
 For the selected binary classifier, which is a **Stacking Ensemble**, the hyperparameter optimisation focused on tuning the individual base learners as well as the meta-learner to achieve the best predictive performance.
@@ -164,6 +166,7 @@ The meta-model (often a Logistic Regression or another lightweight classifier) w
 This systematic tuning helped improve model generalization, achieving an F1-score of 0.9864 on the positive class, with robust performance across other metrics.
 
 
+---
 ## 💡 Key Findings
 ### Key Results and Findings for the Binary Classifier
 - **ROC Curves Comparison:** 

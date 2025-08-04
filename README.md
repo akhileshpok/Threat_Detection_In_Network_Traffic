@@ -143,12 +143,6 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
 
 - **Top 3 Models:**
 
-| Model             | F1 (Pos) | ROC AUC | Avg Precision |
-| ----------------- | -------- | ------- | ------------- |
-| Stacking          | 0.9864   | 0.9995  | 0.9979        |
-| RF (Tuned)        | 0.9862   | 0.9991  | 0.9973        |
-| XGBoost (Untuned) | 0.9672   | 0.9992  | 0.9970        |
-
 <div align="center">
 
 <table>

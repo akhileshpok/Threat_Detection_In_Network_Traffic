@@ -176,9 +176,6 @@ Cross-validation during stacking training (3-fold stratified K-Fold) implicitly 
 - **Early Stopping:** For models supporting it (e.g., XGBoost), early stopping was used to prevent overfitting.  
 - **Resource Considerations:** To manage computational cost, the search space was carefully selected based on domain knowledge and prior experiments.  
 
-This systematic tuning helped improve model generalization, achieving an F1-score of 0.9864 on the positive class, with robust performance across other metrics.
-
-
 ---
 ## 💡 Key Findings
 ### Key Results and Findings for the Binary Classifier

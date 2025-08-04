@@ -200,7 +200,7 @@ The **Deep Learning (DL)** models show decent results but lag behind tree-based 
 
 Overall, the **Stacking Ensemble** offers the best combination of metrics and is the preferred model for deployment in the binary classification task.
 
-### Multi-Class Classification
+### Key Results and Findings for the Multi-Class Classifier
 - **ROC Curves Comparison:** 
 
 - **Precision Recall Curves Comparison:** 

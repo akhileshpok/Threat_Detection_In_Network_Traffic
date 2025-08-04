@@ -138,17 +138,18 @@ For the selected binary classifier, which is a **Stacking Ensemble**, the hyperp
 
 **Random Forest (RF):**
 
-- Number of trees (`n_estimators`)  
-- Maximum depth of trees (`max_depth`)  
-- Minimum samples required to split a node (`min_samples_split`)  
-- Criterion for measuring quality of split (`criterion`)  
+- Number of trees, tested at 100, 200, and 300 (`n_estimators`)  
+- Maximum depth of trees, tested at 10, 20, and unlimited (`max_depth`)  
+- Minimum samples required to split a node, tested at 2 and 5 (`min_samples_split`)  
+- Minium samples required at a leaf node, tested at 1 and 2 (`min_samples_leaf`)
+- Number of features considered for the best split, tested with `'sqrt'` and `'log2'` (`max_features`)  
 
 **XGBoost:**
 
-- Learning rate (`eta`)  
-- Maximum depth of trees (`max_depth`)  
-- Subsample ratio (`subsample`)  
-- Number of boosting rounds (`n_estimators`)  
+- Number of boosting rounds, tested at 100 and 200 (`n_estimators`)  
+- Maximum depth of trees, tested at 3 and 5 (`max_depth`)  
+- Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)
+- Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)   
 
 **Other Base Models (if any):**
 

@@ -127,14 +127,19 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
 
 ## 💡 Key Findings
 ### Binary Classification
-
+- **ROC Curves Comparison:** 
 <p align="center">
   <a href="Binary ROC Curves">
     <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/roc_curve_comparison.png" alt="Alt text" width="800" />
   </a>
 </p>
 
-
+- **Precision Recall Curves Comparison:** 
+<p align="center">
+  <a href="Binary PrecRecall Curves">
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/precision_recall_curve_comparison.png" alt="Alt text" width="800" />
+  </a>
+</p>
 
 ---
 

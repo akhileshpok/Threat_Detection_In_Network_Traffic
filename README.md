@@ -126,12 +126,15 @@ The Model Card for the Binary Clasifier is available [here](https://github.com/a
 The Model Card for the Multi-class Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_multiclass.md).
 
 ## 💡 Key Findings
-- Enrollment in Dutch language courses is the strongest predictor of speaking proficiency. Structured learning is significantly more effective than passive exposure.  
-- Native speakers of Germanic languages (e.g., German, English, Swedish) perform best, while non-Germanic Indo-European and non-Indo-European speakers face greater challenges.  
-- Monolingual individuals struggle more, whereas those with a second language, especially a Germanic one, have an advantage.  
-- Age of arrival matters – Younger arrivals tend to perform slightly better in Dutch proficiency tests.  
-- Length of residence alone has a weak effect – Long-term residence only improves proficiency when combined with active learning.  
-- General formal education has minimal impact – Learning Dutch through structured courses is more influential than overall schooling background.  
+### Binary Classification
+
+<p align="center">
+  <a href="Binary ROC Curves">
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/roc_curve_comparison.png" alt="Alt text" width="400" />
+  </a>
+</p>
+
+
 
 ---
 

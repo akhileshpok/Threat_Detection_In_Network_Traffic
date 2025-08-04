@@ -120,6 +120,8 @@ Trains and evaluates the following models:
 ## 📊 CICIDS2017 Dataset Datasheet
 The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
 
+---
+
 ## 🧠 Model Cards
 - The Model Card for the Binary Clasifier is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/model_card/model_card_binary.md).
 
@@ -132,7 +134,7 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 
 For the selected binary classifier, which is a **Stacking Ensemble**, the hyperparameter optimisation focused on tuning the individual base learners as well as the meta-learner to achieve the best predictive performance.
 
-### Base Learners and Hyperparameters Tuned
+#### Base Learners and Hyperparameters Tuned
 
 **Random Forest (RF):**
 

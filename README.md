@@ -141,7 +141,7 @@ The Model Card for the Multi-class Clasifier is available [here](https://github.
   </a>
 </p>
 
-Top 3 Models:
+- **Top 3 Models:**
 
 | Model             | F1 (Pos) | ROC AUC | Avg Precision |
 | ----------------- | -------- | ------- | ------------- |

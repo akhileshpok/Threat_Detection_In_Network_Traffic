@@ -149,13 +149,10 @@ The top-performing models (Stacking, Random Forest, XGBoost) perform exceptional
 
 - **Average Precision:** ~0.997 — strong performance even under class imbalance.
 
-- The **Deep Learning (DL)** models exhibit decent performance, but not as good as tree-based models. 
-
-Possible reasons:
-
-- DL models may require more data or more careful tuning (e.g. learning rates, batch sizes).
-- Noisy or redundant features may reduce effectiveness.
-- Overfitting if regularization/dropout wasn’t sufficient.
+- The **Deep Learning (DL)** models exhibit decent performance, but not as good as tree-based models. Possible reasons could be:
+  - DL models may require more data or more careful tuning (e.g. learning rates, batch sizes).
+  - Noisy or redundant features may reduce effectiveness.
+  - Overfitting if regularization/dropout wasn’t sufficient.
 
 - **Logistic Regression** performs poorly, likely due to linear model’s limitations on non-linear separability, class imbalance. 
 ---

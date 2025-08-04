@@ -80,9 +80,9 @@ Trains and evaluates the following models:
 - **Long Short-Term Memory (LSTM)**
 - **Stacking Classifier:** An ensemble model that combines predictions from Logistic Regression, Random Forest, and XGBoost using a meta-learner for improved performance.
 
-#### 6. Hyperparameter Tuning (Expland)
-- **(a)** Binary classification - Uses `GridSearchCV` to tune hyperparameters for Logistic Regression, Random Forest & XGBoost models.
-- **(b)** Multi-Class classification - Uses `Optuna` to tune hyperparameters for XGBoost model.
+#### 6. Hyperparameter Tuning 
+- **(a)** Binary classification - Uses `GridSearchCV` to tune hyperparameters for the Logistic Regression, Random Forest & XGBoost models.
+- **(b)** Multi-Class classification - Uses `Optuna` to tune hyperparameters for the XGBoost model.
 - **(c)** Trains the Stacking Classifier using tuned base learners and a meta-classifier.
 - **(d)** Applies the `Optuna` library to tune the Feedforward Neural Network (FFN).
 - **(e)** Uses the `Optuna` library to optimize the LSTM model for temporal feature learning.

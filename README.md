@@ -203,7 +203,7 @@ Cross-validation during stacking training (3-fold stratified K-Fold) implicitly 
       <th>Model</th>
       <th>F1 (Pos)</th>
       <th>ROC AUC</th>
-      <th>Avg Precision</th>
+      <th>Avg. Precision</th>
     </tr>
   </thead>
   <tbody>

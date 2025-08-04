@@ -127,6 +127,8 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 
 ## 💡 Key Findings
 ### Binary Classification
+Key results and findings for the Binary Classifier are presented below;
+
 - **ROC Curves Comparison:** 
 <p align="center">
   <a href="Binary ROC Curves">

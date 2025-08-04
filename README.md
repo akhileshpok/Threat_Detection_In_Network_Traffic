@@ -137,12 +137,15 @@ For the selected binary classifier, which is a **Stacking Ensemble**, the hyperp
 #### Base Learners and Hyperparameters Tuned
 
 **Logistic Regression:**
+The Logistic Regression base model was tuned using `GridSearchCV` with a pipeline.
+
 - Regularization strength inverse, tested across `[0.01, 0.1, 1, 10, 100]` to control overfitting (`C`)  
-- Optimization algorithms tested were `'lbfgs'` (supports only `'l2'` penalty) and `'saga'` (supports `'l1'` and `'elasticnet'` penalties, but here only `'l2'` was used) ()`solver`)  
+- Optimization algorithms tested were `'lbfgs'` (supports only `'l2'` penalty) and `'saga'` (supports `'l1'` and `'elasticnet'` penalties, but here only `'l2'` was used) (`solver`)  
 - Only `'l2'` penalty was considered to ensure compatibility with solvers (`penalty`) 
 
 
 **Random Forest (RF):**
+The Random Forest base model was tuned using `GridSearchCV` with a pipeline.
 
 - Number of trees, tested at 100, 200, and 300 (`n_estimators`)  
 - Maximum depth of trees, tested at 10, 20, and unlimited (`max_depth`)  
@@ -151,19 +154,20 @@ For the selected binary classifier, which is a **Stacking Ensemble**, the hyperp
 - Number of features considered for the best split, tested with `'sqrt'` and `'log2'` (`max_features`)  
 
 **XGBoost:**
+The XGBoost base model was tuned using `GridSearchCV` with a pipeline. 
 
 - Number of boosting rounds, tested at 100 and 200 (`n_estimators`)  
 - Maximum depth of trees, tested at 3 and 5 (`max_depth`)  
 - Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)
 - Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)   
 
-**Other Base Models (if any):**
-
-- Relevant hyperparameters depending on the specific algorithm used  
-
 #### Meta-Learner
+The meta-learner in the stacking ensemble is a **Logistic Regression** model configured with default parameters optimized for binary classification. Unlike the base learners, explicit hyperparameter tuning was minimal or not performed for the meta-learner due to:
+- The meta-learner’s relatively simple architecture requiring fewer hyperparameters.
+- Use of the `'lbfgs'` solver with L2 regularization by default, which generally provides robust performance.
+- The focus on tuning base learners where most performance gains are realized.
 
-The meta-model (often a Logistic Regression or another lightweight classifier) was tuned for regularization strength (`C`) and solver type to balance bias and variance.
+Cross-validation during stacking training (3-fold stratified K-Fold) implicitly ensures the meta-learner generalizes well without overfitting. Future improvements may explore tuning regularization strength (`C`) or solver types if needed.
 
 #### Optimisation Strategy
 

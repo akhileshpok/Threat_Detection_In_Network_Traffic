@@ -136,6 +136,12 @@ For the selected binary classifier, which is a **Stacking Ensemble**, the hyperp
 
 #### Base Learners and Hyperparameters Tuned
 
+**Logistic Regression:**
+- Regularization strength inverse, tested across `[0.01, 0.1, 1, 10, 100]` to control overfitting (`C`)  
+- Optimization algorithms tested were `'lbfgs'` (supports only `'l2'` penalty) and `'saga'` (supports `'l1'` and `'elasticnet'` penalties, but here only `'l2'` was used) ()`solver`)  
+- Only `'l2'` penalty was considered to ensure compatibility with solvers (`penalty`) 
+
+
 **Random Forest (RF):**
 
 - Number of trees, tested at 100, 200, and 300 (`n_estimators`)  

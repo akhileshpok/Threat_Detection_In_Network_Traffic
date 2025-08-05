@@ -95,8 +95,6 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
   *Purpose:* An ensemble method that combines predictions of multiple base models via a meta-learner.  
   *Why Chosen:* Leverages the strengths of diverse models (e.g., LogReg, RF, XGBoost) to improve predictive performance and robustness. Often outperforms individual classifiers in complex tasks like intrusion detection.
 
----
-
 #### 🔍 Summary of Model Selection Strategy
 
 - **Range of Complexity**: From simple baselines (Dummy) to complex deep models (FFN, LSTM).

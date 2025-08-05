@@ -131,49 +131,72 @@ The Datasheet for the publicly available CICIDS2017 dataset is available [here](
 ## 🎛️ Hyperparameter Optimisation
 ### Binary Classifier
 
-For the selected binary classifier, which is a **Stacking Ensemble**, the hyperparameter optimisation focused on tuning the individual base learners as well as the meta-learner to achieve the best predictive performance.
+For the selected binary classifier, which is a **Stacking Ensemble**, the hyperparameter optimisation focused on tuning the individual base learners—including classical machine learning models and deep learning architectures—as well as the meta-learner to achieve the best predictive performance.
 
 #### Base Learners and Hyperparameters Tuned
 
-**Logistic Regression:**
+**Logistic Regression:**  
 The Logistic Regression base model was tuned using `GridSearchCV` with a pipeline.
 
 - Regularization strength inverse, tested across `[0.01, 0.1, 1, 10, 100]` to control overfitting (`C`)  
 - Optimization algorithms tested were `'lbfgs'` (supports only `'l2'` penalty) and `'saga'` (supports `'l1'` and `'elasticnet'` penalties, but here only `'l2'` was used) (`solver`)  
-- Only `'l2'` penalty was considered to ensure compatibility with solvers (`penalty`) 
+- Only `'l2'` penalty was considered to ensure compatibility with solvers (`penalty`)  
 
-
-**Random Forest (RF):**
+**Random Forest (RF):**  
 The Random Forest base model was tuned using `GridSearchCV` with a pipeline.
 
 - Number of trees, tested at 100, 200, and 300 (`n_estimators`)  
 - Maximum depth of trees, tested at 10, 20, and unlimited (`max_depth`)  
 - Minimum samples required to split a node, tested at 2 and 5 (`min_samples_split`)  
-- Minium samples required at a leaf node, tested at 1 and 2 (`min_samples_leaf`)
+- Minimum samples required at a leaf node, tested at 1 and 2 (`min_samples_leaf`)  
 - Number of features considered for the best split, tested with `'sqrt'` and `'log2'` (`max_features`)  
 
-**XGBoost:**
-The XGBoost base model was tuned using `GridSearchCV` with a pipeline. 
+**XGBoost:**  
+The XGBoost base model was tuned using `GridSearchCV` with a pipeline.
 
 - Number of boosting rounds, tested at 100 and 200 (`n_estimators`)  
 - Maximum depth of trees, tested at 3 and 5 (`max_depth`)  
-- Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)
-- Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)   
+- Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)  
+- Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)  
 
-#### Meta-Learner
+**Feedforward Neural Network (FFN):**  
+The FFN model was optimized using Optuna hyperparameter tuning with early stopping and pruning.
+
+- Learning rate (`lr`) was searched on a log-uniform scale between `1e-5` and `1e-2`.  
+- Dropout rate (`dropout_rate`) was tested between `0.1` and `0.5`.  
+- Weight decay (`weight_decay`) was tuned on a log-uniform scale between `1e-5` and `1e-2`.  
+- The model was trained using mini-batches with a fixed batch size.  
+- Binary cross-entropy loss with logits was used during training.  
+- Early stopping with patience of 7 epochs was implemented to prevent overfitting.  
+- Optuna’s Median Pruner was used to stop unpromising trials early.  
+- The primary evaluation metric was the validation F1-score.
+
+**Long Short-Term Memory Network (LSTM):**  
+The LSTM model was similarly optimized via Optuna with early stopping and pruning.
+
+- Learning rate (`lr`), dropout rate (`dropout_rate`), and weight decay (`weight_decay`) were tuned in similar ranges as the FFN.  
+- The number of hidden units and layers were fixed based on prior experiments.  
+- Training used mini-batches and binary cross-entropy loss with logits.  
+- Early stopping with a patience of 5 epochs was applied.  
+- Optuna’s Median Pruner was used to prune non-promising trials.  
+- Validation F1-score was used as the target metric for optimization.
+
+#### Meta-Learner  
 The meta-learner in the stacking ensemble is a **Logistic Regression** model configured with default parameters optimized for binary classification. Unlike the base learners, explicit hyperparameter tuning was minimal or not performed for the meta-learner due to:
-- The meta-learner’s relatively simple architecture requiring fewer hyperparameters.
-- Use of the `'lbfgs'` solver with L2 regularization by default, which generally provides robust performance.
+
+- The meta-learner’s relatively simple architecture requiring fewer hyperparameters.  
+- Use of the `'lbfgs'` solver with L2 regularization by default, which generally provides robust performance.  
 - The focus on tuning base learners where most performance gains are realized.
 
 Cross-validation during stacking training (3-fold stratified K-Fold) implicitly ensures the meta-learner generalizes well without overfitting. Future improvements may explore tuning regularization strength (`C`) or solver types if needed.
 
 #### Optimisation Strategy
 
-- **Grid Search / Random Search:** Hyperparameter combinations were explored using Grid Search or Randomized Search with cross-validation on the training set.  
+- **Grid Search / Random Search:** Hyperparameter combinations for classical models were explored using Grid Search or Randomized Search with cross-validation on the training set.  
+- **Optuna Bayesian Optimization:** The FFN and LSTM deep learning models were tuned using Optuna’s Tree-structured Parzen Estimator (TPE) sampler for efficient hyperparameter exploration, combined with pruning to reduce computation time.  
 - **Evaluation Metric:** The F1-score for the positive (attack) class was used as the primary metric to balance precision and recall.  
-- **Early Stopping:** For models supporting it (e.g., XGBoost), early stopping was used to prevent overfitting.  
-- **Resource Considerations:** To manage computational cost, the search space was carefully selected based on domain knowledge and prior experiments.  
+- **Early Stopping:** Models supporting it (e.g., XGBoost, FFN, LSTM) used early stopping to prevent overfitting.  
+- **Resource Considerations:** To manage computational cost, the search space was carefully selected based on domain knowledge and prior experiments, with pruning mechanisms further reducing wasted resources.
 
 ### Multi-Class Classifier
 

@@ -33,16 +33,21 @@ The model is an ensemble Stacking Classifier combining multiple base learners (e
 - **Not intended for**: Real-time deployment without optimization; environments with drastically different network traffic than CICIDS2017.
 
 ---
-
 ## Training Data
 
 - **Dataset**: CICIDS2017
-- **Training set size**: 226,230 samples, 78 features
-- **Test set size**: 56,558 samples, 78 features
+- **Original dataset size**: 2,827,876 rows × 79 columns
+- **Subset used**: 282,788 rows × 79 columns (~10% of the original dataset)
+- **Binary label distribution in the subset**:
+  - BENIGN: 227,132 samples
+  - ATTACK: 55,656 samples
 - **Class names**: BENIGN, ATTACK
-- **Preprocessing**: PCA for dimensionality reduction, SMOTE for class imbalance, standard normalization.
-- **Class Balance (Test set)**: Approx. 80% BENIGN, 20% ATTACK
-- **Data Source**: [CICIDS2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
+- **Test set size**: 56,558 samples, 78 features
+- **Preprocessing**: PCA for dimensionality reduction, SMOTE for class imbalance, and standard normalization
+- **Class balance (test set)**: Approx. 80% BENIGN, 20% ATTACK
+- **Data source**: [CICIDS2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
+
+> ⚠️ **Note**: Due to significant computational and time constraints, the entire model pipeline — including preprocessing, training, hyperparameter tuning, and evaluation — was conducted on a **subset** of the original dataset. The subset was carefully sampled to preserve the original class distribution while reducing processing time. Therefore, the reported performance metrics reflect this sampled subset and may vary when applied to the full dataset or real-world traffic.
 
 ---
 

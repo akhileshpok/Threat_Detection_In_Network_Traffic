@@ -222,13 +222,18 @@ The Random Forest base model was tuned using `GridSearchCV` with a pipeline.
 - Number of features considered for the best split, tested with `'sqrt'` and `'log2'` (`max_features`)  
 
 **XGBoost:**  
-The XGBoost base model was tuned using `GridSearchCV` with a pipeline.
+The XGBoost base model for multi-class classification was tuned using **Optuna** with a pipeline and stratified cross-validation.
 
-- Number of boosting rounds, tested at 100 and 200 (`n_estimators`)  
-- Maximum depth of trees, tested at 3 and 5 (`max_depth`)  
-- Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)  
-- Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)  
-- Multi-class objective set to `'multi:softprob'` with appropriate number of classes  
+- Number of boosting rounds (`n_estimators`) was searched between 100 and 2000 in steps of 100.  
+- Maximum depth of trees (`max_depth`) was searched between 3 and 15.  
+- Step size shrinkage (`learning_rate`) was searched on a log scale between 0.001 and 0.3 to control overfitting.  
+- Subsample ratio of training instances (`subsample`) was searched between 0.5 and 1.0.  
+- Subsample ratio of columns when constructing trees (`colsample_bytree`) was searched between 0.5 and 1.0.  
+- Minimum loss reduction (`gamma`) was searched between 0.0 and 1.0 to control complexity.  
+- L1 (`reg_alpha`) and L2 (`reg_lambda`) regularization parameters were searched on log scales from 1e-8 to 10.0 for weight penalties.  
+- Multi-class objective was set to `'multi:softprob'` with the appropriate number of classes.  
+- Early pruning of trials was enabled via Optuna's Median Pruner to improve efficiency.  
+- Model performance was evaluated using stratified 3-fold cross-validation with the F1-macro score as the optimization metric.
 
 #### Deep Learning Models
 

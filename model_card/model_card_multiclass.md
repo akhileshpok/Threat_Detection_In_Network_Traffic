@@ -55,6 +55,8 @@ The meta-learner is a Logistic Regression classifier.
 - **Preprocessing**: PCA for dimensionality reduction, SMOTE for class imbalance, and standard normalization
 - **Data source**: [CICIDS2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
 
+> ⚠️ **Note**: Due to significant computational and time constraints, the entire model pipeline — including preprocessing, training, hyperparameter tuning, and evaluation — was conducted on a **subset** of the original dataset. The subset was carefully sampled to preserve the original class distribution while reducing processing time. Therefore, the reported performance metrics reflect this sampled subset and may vary when applied to the full dataset or real-world traffic.
+
 ### Data Sampling and Split Methodology
 
 Due to computational and time constraints, a stratified subset of approximately 20,000 samples was created from the full CICIDS2017 dataset. This was achieved by:

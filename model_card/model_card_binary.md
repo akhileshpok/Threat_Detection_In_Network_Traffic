@@ -105,9 +105,11 @@ The model is an ensemble Stacking Classifier combining multiple base learners (e
 
 ## Caveats and Recommendations
 
-- Deploy only in environments similar to CICIDS2017 network traffic distribution.
-- Retrain regularly to account for new attack vectors or network changes.
-- Use with additional anomaly detection layers or alerting mechanisms for robust defense.
+- ✅ Deploy only in environments similar to CICIDS2017 network traffic distribution.  
+- ✅ Retrain regularly to account for new attack vectors or network changes.  
+- ✅ Use with additional anomaly detection layers or alerting mechanisms for robust defense.  
+- ❌ Avoid deployment in networks with substantially different traffic patterns without thorough validation.  
+- ❌ Do not rely solely on this model for critical security decisions without human oversight.
 
 ---
 

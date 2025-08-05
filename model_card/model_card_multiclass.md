@@ -52,7 +52,8 @@ The meta-learner is a Logistic Regression classifier.
 - **Subset size used for modeling**: 19,992 rows × 78 features  
 - **Test set size**: 3,999 samples  
 - **Class labels**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack  
-- **Features**: 78 preprocessed numerical features  
+- **Preprocessing**: PCA for dimensionality reduction, SMOTE for class imbalance, and standard normalization
+- **Data source**: [CICIDS2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
 
 ### Data Sampling and Split Methodology
 

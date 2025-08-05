@@ -72,7 +72,7 @@ This project implements two complete machine learning pipelines to detect networ
 #### 5. Classification Task ML Modeling
 Trains and evaluates the following models for both **Binary** and **Multi-Class** classification tasks using the CICIDS2017 dataset. The model selection was designed to cover a spectrum from simple to complex, ensuring robust baselines and high-performing classifiers suitable for network intrusion detection.
 
-#### ✅ Models and Justification
+#### ✅ Models Selected and Justification
 - **Dummy Classifier**  
   *Purpose:* Serves as a naive baseline (e.g., always predicting the most frequent class).  
   *Why Chosen:* Establishes a performance floor, allowing meaningful evaluation of more sophisticated models.

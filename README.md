@@ -325,7 +325,7 @@ The top-performing models — **Stacking Classifier**, **Random Forest (Untuned 
 - Its linear nature limits capturing non-linear and complex attack patterns.
 - Class imbalance affects its sensitivity to minority classes.
 
-**Overall**, the **Stacking Ensemble** provides the best combination of robustness and accuracy for **multi-class classification** on the CICIDS2017 subset and is recommended as the preferred model for deployment.
+Overall, the **Stacking Ensemble** provides the best combination of robustness and accuracy for **multi-class classification** on the CICIDS2017 subset and is recommended as the preferred model for deployment.
 
 ---
 

@@ -16,7 +16,7 @@
 ## Model Description
 
 **Input:**  
-A vector of 78 numerical features derived from preprocessed network traffic, normalized and optionally transformed using PCA.
+A vector of 78 numerical features derived from preprocessed network traffic, standardized and transformed using Principal Component Analysis (PCA).
 
 **Output:**  
 Multi-class label for one of the following:
@@ -45,17 +45,32 @@ The meta-learner is a Logistic Regression classifier.
 - **Not Suitable For**: Real-time applications or environments not resembling CICIDS2017
 
 ---
-
 ## Training Data
 
-- **Dataset**: Subset of CICIDS2017 (original size: 2,827,876 rows × 79 columns)
-- **Subset used**: 19,992 rows × 78 features (due to compute and time constraints)
-- **Test set size**: 3,999 samples (randomly held out from the subset)
+- **Dataset**: Subset of the CICIDS2017 intrusion detection dataset  
+- **Original dataset size**: 2,827,876 rows × 79 columns  
+- **Subset size used for modeling**: 19,992 rows × 78 features  
+- **Test set size**: 3,999 samples  
+- **Class labels**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack  
 - **Features**: 78 preprocessed numerical features  
-- **Class labels**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack
-- **Preprocessing**: Standardization, PCA for dimensionality reduction, and SMOTE for class imbalance
 
-> ⚠️ **Note**: The full CICIDS2017 dataset was not used for training or hyperparameter tuning. Model performance reflects evaluation on this smaller subset.
+### Data Sampling and Split Methodology
+
+Due to computational and time constraints, a stratified subset of approximately 20,000 samples was created from the full CICIDS2017 dataset. This was achieved by:
+
+- Calculating the proportion of each class in the original dataset.
+- Sampling a fixed number of rows per class proportional to these original class distributions.
+- This stratified sampling ensured that the subset maintained class distribution representative of the full dataset within the limited sample size.
+
+The test set of 3,999 samples was then randomly held out from this stratified subset, ensuring consistent class proportions in both training and test sets.
+
+### Preprocessing
+
+- Standardization of features to zero mean and unit variance.
+- Dimensionality reduction using Principal Component Analysis (PCA).
+- Synthetic Minority Over-sampling Technique (SMOTE) applied to address class imbalance in the training data.
+
+> ⚠️ **Note**: The model was trained and evaluated on this reduced, stratified subset of CICIDS2017 and **not** on the full dataset. Performance metrics should be interpreted within this context and may not generalize fully to the original dataset.
 
 ---
 
@@ -71,6 +86,7 @@ The meta-learner is a Logistic Regression classifier.
 
 **Validation**: Hold-out test set  
 **Test Dataset**: Representative subset from CICIDS2017
+**Test set size**: 3,999 samples from the stratified subset
 
 ### Metrics:
 - **Accuracy**: 0.98  
@@ -105,11 +121,11 @@ The meta-learner is a Logistic Regression classifier.
 
 ## Limitations
 
-- Trained on CICIDS2017 only — may not generalize to other network types.
+- Trained exclusively on the CICIDS2017 dataset; may not generalize well to other network environments.
 - Model trained on a small subset (~0.7%) of the original CICIDS2017 dataset, which may impact generalizability to the full spectrum of attack types and network traffic behaviors.
 - Performance on rare_attack class is limited by data sparsity.
 - Additional work needed for real-time inference.
-- Relies on specific preprocessing (PCA, SMOTE).
+- Relies on specific preprocessing pipeline (PCA, SMOTE).
 
 ---
 
@@ -145,6 +161,7 @@ The meta-learner is a Logistic Regression classifier.
 - **Predictions**: `./model_checkpoints/final_y_pred_multi_class.npy`  
 - **Probabilities**: `./model_checkpoints/final_y_prob_multi_class.npy`  
 
+> *Requires scikit-learn >= X.X and XGBoost >= X.X for loading and inference.*
 ---
 
 ## References

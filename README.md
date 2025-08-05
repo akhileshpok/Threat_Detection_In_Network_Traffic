@@ -68,20 +68,11 @@ This project implements two complete machine learning pipelines to detect networ
 - **Dimensionality Reduction:** Reduces feature dimensionality with Principal Component Analysis (PCA).
 - **Class Imbalance Handling:** SMOTE has been used to synthetically balance the training dataset.
 
-#### 5. Classification Task ML Modeling
-Trains and evaluates the following models for both Binary and Multi-Class Classifiers:
-- **Dummy Classifier:** Serves as a naive baseline for comparison.
-- **Logistic Regression**
-- **Random Forest**
-- **XGBoost**
-- **Feedforward Neural Network (FFN)**
-- **Long Short-Term Memory (LSTM)**
-- **Stacking Classifier:** An ensemble model that combines predictions from Logistic Regression, Random Forest, and XGBoost using a meta-learner for improved performance.
 
 #### 5. Classification Task ML Modeling
 Trains and evaluates the following models for both **Binary** and **Multi-Class** classification tasks using the CICIDS2017 dataset. The model selection was designed to cover a spectrum from simple to complex, ensuring robust baselines and high-performing classifiers suitable for network intrusion detection.
 
-##### ✅ Models and Justification
+#### ✅ Models and Justification
 - **Dummy Classifier**  
   *Purpose:* Serves as a naive baseline (e.g., always predicting the most frequent class).  
   *Why Chosen:* Establishes a performance floor, allowing meaningful evaluation of more sophisticated models.
@@ -106,7 +97,7 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 
 ---
 
-##### 🔍 Summary of Model Selection Strategy
+#### 🔍 Summary of Model Selection Strategy
 
 - **Range of Complexity**: From simple baselines (Dummy) to complex deep models (FFN, LSTM).
 - **Interpretability vs. Accuracy**: Balances transparent models like Logistic Regression with high-performing black-box models.

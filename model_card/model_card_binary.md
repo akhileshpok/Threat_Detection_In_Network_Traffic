@@ -120,6 +120,7 @@ The model is an ensemble Stacking Classifier combining multiple base learners (e
 - Final predictions saved at: `./model_checkpoints/final_binary_y_pred.npy`
 - Final positive class probabilities saved at: `./model_checkpoints/final_binary_y_prob_pos_class.npy`
 
+> *Requires scikit-learn >= 1.5.1 and XGBoost >= 3.0.1 for loading and inference.*
 ---
 
 ## References

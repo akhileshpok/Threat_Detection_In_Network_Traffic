@@ -161,7 +161,7 @@ The test set of 3,999 samples was then randomly held out from this stratified su
 - **Predictions**: `./model_checkpoints/final_y_pred_multi_class.npy`  
 - **Probabilities**: `./model_checkpoints/final_y_prob_multi_class.npy`  
 
-> *Requires scikit-learn >= X.X and XGBoost >= X.X for loading and inference.*
+> *Requires scikit-learn >= 1.5.1 and XGBoost >= 3.0.1 for loading and inference.*
 ---
 
 ## References

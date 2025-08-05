@@ -78,6 +78,42 @@ Trains and evaluates the following models for both Binary and Multi-Class Classi
 - **Long Short-Term Memory (LSTM)**
 - **Stacking Classifier:** An ensemble model that combines predictions from Logistic Regression, Random Forest, and XGBoost using a meta-learner for improved performance.
 
+#### 5. Classification Task ML Modeling
+Trains and evaluates the following models for both **Binary** and **Multi-Class** classification tasks using the CICIDS2017 dataset. The model selection was designed to cover a spectrum from simple to complex, ensuring robust baselines and high-performing classifiers suitable for network intrusion detection.
+
+##### ✅ Models and Justification
+- **Dummy Classifier**  
+  *Purpose:* Serves as a naive baseline (e.g., always predicting the most frequent class).  
+  *Why Chosen:* Establishes a performance floor, allowing meaningful evaluation of more sophisticated models.
+- **Logistic Regression**  
+  *Purpose:* A linear classifier optimized using gradient descent.  
+  *Why Chosen:* Simple, interpretable, and often surprisingly competitive on high-dimensional tabular data. Also used as the meta-learner in stacking due to its generalization ability.
+- **Random Forest**  
+  *Purpose:* An ensemble of decision trees trained via bootstrap aggregation (bagging).  
+  *Why Chosen:* Handles both numerical and categorical features well, robust to overfitting, and provides feature importance. Effective on tabular data with class imbalance.
+- **XGBoost**  
+  *Purpose:* A gradient boosting framework known for speed and performance.  
+  *Why Chosen:* Handles class imbalance, supports regularization, and captures complex interactions. Performs particularly well on structured datasets like CICIDS2017.
+- **Feedforward Neural Network (FFN)**  
+  *Purpose:* A deep learning model with dense, fully connected layers.  
+  *Why Chosen:* Can model complex, non-linear feature interactions. Suitable when the dataset is large and diverse enough to benefit from deep architectures.
+- **Long Short-Term Memory (LSTM)**  
+  *Purpose:* A type of recurrent neural network (RNN) designed to model sequential or temporal dependencies.  
+  *Why Chosen:* Especially useful when modeling time-based or sequential network traffic flows, as LSTM captures dependencies across time steps.
+- **Stacking Classifier (Ensemble)**  
+  *Purpose:* An ensemble method that combines predictions of multiple base models via a meta-learner.  
+  *Why Chosen:* Leverages the strengths of diverse models (e.g., LogReg, RF, XGBoost) to improve predictive performance and robustness. Often outperforms individual classifiers in complex tasks like intrusion detection.
+
+---
+
+##### 🔍 Summary of Model Selection Strategy
+
+- **Range of Complexity**: From simple baselines (Dummy) to complex deep models (FFN, LSTM).
+- **Interpretability vs. Accuracy**: Balances transparent models like Logistic Regression with high-performing black-box models.
+- **Robustness**: Ensemble methods (Random Forest, XGBoost, Stacking) increase stability and accuracy.
+- **Domain Suitability**: All models are appropriate for structured cybersecurity data with both categorical and numerical features.
+
+
 #### 6. Hyperparameter Tuning 
 - **(a)** Binary classification - Uses `GridSearchCV` to tune hyperparameters for the Logistic Regression, Random Forest & XGBoost models.
 - **(b)** Multi-Class classification - Uses `Optuna` to tune hyperparameters for the XGBoost model.

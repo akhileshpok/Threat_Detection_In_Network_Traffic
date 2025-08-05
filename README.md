@@ -32,7 +32,6 @@ Explore the Jupyter notebooks for this project containing the Python code for th
 
 ---
   
-
 ## ⚙️ Project Workflow
 
 ### CICIDS2017 Binary Classification, Multi-Class Classicification Pipelines:
@@ -261,16 +260,28 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 
 ---
 
-## 🤝 Business Recommendations based on the Binary Classifier Performance
+## 🤝 Business Recommendations for Binary Threat Detection (Benign vs. Malicious)
 
-- **Deploy the model** in real-time security systems (e.g., firewalls, IDS, SIEM) to enhance threat detection.
-- **Leverage high accuracy and recall** to minimize false positives and missed attacks.
-- **Integrate into security workflows** to reduce analyst workload and speed up incident response.
-- **Validate performance** in your own network environment before full deployment.
-- **Retrain periodically** with fresh data to keep up with evolving cyber threats.
-- **Monitor model drift** by tracking changes in precision/recall over time and update as needed.
+- ✅ **Use the model to detect whether network traffic is safe or potentially malicious**, providing a first layer of defense in your security systems.  
+- ✅ **Deploy it in real-time environments** like firewalls, intrusion detection systems (IDS), or SIEM tools to flag suspicious activity early.  
+- ✅ **Take advantage of the model’s strong accuracy** to reduce false alarms and avoid missing real attacks.  
+- ✅ **Integrate into your security team’s daily workflows** to help analysts quickly filter out safe traffic and focus on real threats.  
+- ✅ **Test the model on your own network data** to ensure it works well with your traffic patterns before going live.  
+- ✅ **Retrain the model regularly** using new attack data to stay ahead of evolving threats.  
+- ✅ **Track the model’s performance over time**, and update it if you notice a drop in accuracy or an increase in false alerts.  
+- ❌ **Don’t rely solely on this model to make automated security decisions**—always keep a human in the loop for critical actions.  
 
-## 🤝 Business Recommendations based on the Multi-Class Classifier Performance
+## 🤝 Business Recommendations for Multi-Class Attack Detection
+
+- ✅ **Use the model to identify different types of network attacks**, helping security teams respond more effectively to each threat.  
+- ✅ **Tailor responses based on the type of attack detected**, such as using specific protections for DDoS attacks versus PortScan attempts.  
+- ✅ **Rely on the model’s strong accuracy for common attacks**, but be cautious with rare attack types since they have less data.  
+- ✅ **Integrate the model into your existing security processes** to help analysts quickly understand and prioritize threats.  
+- ✅ **Test the model on your own network data** before fully relying on it, to make sure it works well in your environment.  
+- ✅ **Keep the model up-to-date by retraining it regularly**, so it stays effective against new and changing cyber threats.  
+- ✅ **Monitor the model’s performance over time**, and update it if you notice it becoming less accurate.  
+- ✅ **Combine the model with other security tools**, like anomaly detection, to catch unusual or new types of attacks.  
+- ❌ **Don’t rely only on the model for automatic blocking of network traffic**, especially for rare or high-risk attacks, to avoid mistakes that could disrupt your business.  
 
 ---
 

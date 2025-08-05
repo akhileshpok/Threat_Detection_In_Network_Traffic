@@ -1,23 +1,153 @@
-# Model Card - Multi-Class Classifier 
+# Model Card: Stacking Classifier for Multi-Class Classification (CICIDS2017)
 
-See the [example Google model cards](https://modelcards.withgoogle.com/model-reports) for inspiration. 
+## Model Details
+
+- **Model Name**: Stacking Classifier (Multi-Class)
+- **Version**: 1.0  
+- **Date**: 05-08-2025  
+- **Model Type**: Ensemble Stacking Classifier  
+- **Framework**: scikit-learn  
+- **Owner/Creator**: Akhilesh Pokhariyal  
+- **License**: Apache 2.0  
+- **Contact**: akhilesh.pokhariyal@gmail.com  
+
+---
 
 ## Model Description
 
-**Input:** Describe the inputs of your model 
+**Input:**  
+A vector of 78 numerical features derived from preprocessed network traffic, normalized and optionally transformed using PCA.
 
-**Output:** Describe the output(s) of your model
+**Output:**  
+Multi-class label for one of the following:
+- `BENIGN`
+- `DDoS`
+- `DoS Hulk`
+- `PortScan`
+- `rare_attack` (aggregated rare attacks)
 
-**Model Architecture:** Describe the model architecture you’ve used
+Also returns class probabilities for each prediction.
+
+**Model Architecture:**  
+An ensemble **Stacking Classifier** combining predictions from:
+- Logistic Regression
+- Random Forest (tuned)
+- XGBoost (tuned)
+
+The meta-learner is a Logistic Regression classifier.
+
+---
+
+## Intended Use
+
+- **Use Case**: Detect and classify network traffic behavior (normal vs. different attack types)
+- **Target Users**: Cybersecurity analysts, IT admins, IDS developers  
+- **Not Suitable For**: Real-time applications or environments not resembling CICIDS2017
+
+---
+
+## Training Data
+
+- **Dataset**: Subset of CICIDS2017 (official size: 2,827,876 rows, 79 features)
+- **Subset Used**: 19,992 samples (due to time and compute constraints)
+- **Test Size**: 3,999 samples (randomly held out from the subset)
+- **Features**: 78 numerical values  
+- **Classes**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack 
+- **Preprocessing**: Standardization, PCA, SMOTE
+- **Note**: The full dataset was not used for model training or tuning.
+
+---
+
+## Assumptions and Constraints
+
+- Due to limited computational resources and time, only a subset of the CICIDS2017 dataset (19,992 rows) was used for model development and evaluation.
+- As a result, performance metrics reflect outcomes on a constrained dataset and may not be representative of performance on the full dataset or in real-world deployments.
+- This model should be viewed as a proof-of-concept, not as a production-ready intrusion detection system.
+
+---
 
 ## Performance
 
-Give a summary graph or metrics of how the model performs. Remember to include how you are measuring the performance and what data you analysed it on. 
+**Validation**: Hold-out test set  
+**Test Dataset**: Representative subset from CICIDS2017
+
+- **Classification Report:**
+
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| BENIGN       | 1.00      | 0.98   | 0.99     | 3213    |
+| DDoS         | 0.98      | 0.98   | 0.98     | 181     |
+| DoS Hulk     | 0.96      | 0.98   | 0.97     | 325     |
+| PortScan     | 0.99      | 1.00   | 0.99     | 225     |
+| rare_attack  | 0.58      | 0.85   | 0.69     | 55      |
+
+- **Metrics**:
+- **Accuracy**: 0.98  
+- **Macro F1-score**: 0.93  
+- **Weighted F1-score**: 0.98  
+- **ROC AUC (micro)**: 0.9955  
+- **PR AUC (micro)**: 0.9850  
+- **Composite Rank**: 3.5
+
+- **Confusion Matrix:**
+
+| Actual \ Predicted | BENIGN | DDoS | DoS Hulk | PortScan | rare_attack |
+|--------------------|--------|------|----------|----------|-------------|
+| **BENIGN**         | 3160   | 3    | 13       | 3        | 34          |
+| **DDoS**           | 3      | 178  | 0        | 0        | 0           |
+| **DoS Hulk**       | 5      | 0    | 320      | 0        | 0           |
+| **PortScan**       | 0      | 0    | 0        | 225      | 0           |
+| **rare_attack**    | 6      | 0    | 2        | 0        | 47          |
+
+
+---
 
 ## Limitations
 
-Outline the limitations of your model.
+- Trained on CICIDS2017 only — may not generalize to other network types.
+- Model trained on a small subset (~0.7%) of the original CICIDS2017 dataset, which may impact generalizability to the full spectrum of attack types and network traffic behaviors.
+- Performance on rare_attack class is limited by data sparsity.
+- Additional work needed for real-time inference.
+- Relies on specific preprocessing (PCA, SMOTE).
+
+---
 
 ## Trade-offs
 
-Outline any trade-offs of your model, such as any circumstances where the model exhibits performance issues. 
+- **Accuracy vs Interpretability**: Ensemble models reduce transparency.
+- **Recall vs Precision**: Prioritizes recall on attack types to reduce false negatives.
+- **Compute Cost**: Higher due to model complexity and ensemble strategy.
+
+---
+
+## Ethical Considerations
+
+- May underperform on unseen attack types or network configurations.
+- False positives may lead to unnecessary alerts.
+- Human review recommended before acting on predictions.
+
+---
+
+## Recommendations
+
+- ✅ Retrain periodically with up-to-date network traffic and threats.  
+- ✅ Use with anomaly detection or rule-based systems for robust protection.  
+- ✅ Validate model against production traffic before deployment.  
+- ❌ Avoid using it as a black-box decision tool without oversight.  
+
+---
+
+## Checkpoints and Artifacts
+
+- **Final model**: `./model_checkpoints/final_best_multi_class_model_stacking_classifier.pkl`  
+- **Best model name**: `./model_checkpoints/best_model_name_multi_class.pkl`  
+- **Predictions**: `./model_checkpoints/final_y_pred_multi_class.npy`  
+- **Probabilities**: `./model_checkpoints/final_y_prob_multi_class.npy`  
+
+---
+
+## References
+
+- [CICIDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)  
+- [Model Card Toolkit (Google)](https://github.com/tensorflow/model-card-toolkit)
+

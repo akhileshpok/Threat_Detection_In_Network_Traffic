@@ -2,7 +2,7 @@
 
 ## Model Details
 
-- **Model Name**: Stacking Classifier
+- **Model Name**: Stacking Classifier (Binary Class)
 - **Version**: 1.0
 - **Date**: 04-08-2025
 - **Model Type**: Ensemble Stacking Classifier

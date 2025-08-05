@@ -355,13 +355,12 @@ Overall, the **Stacking Ensemble** provides the best combination of robustness a
 ---
 
 ## 🔬 Future Work & Enhancements
-### Model Optimization
-Explore more sophisticated deep learning architectures like CNNs and advanced ensemble techniques to further improve the performance of both the binary and multiclass classifiers.
-### Data & Feature Refinement
-Develop new, domain-specific features and use advanced feature selection methods to enhance model efficiency and interpretability. Additionally, investigate cost-sensitive learning or other advanced resampling techniques to better handle the dataset's class imbalance.
-### Productionization
-Focus on building a complete, end-to-end deployment pipeline that includes real-time inference, model monitoring, and automated retraining to move the project from a proof-of-concept to a practical, operational solution.
-  
+### Model Optimization  
+Due to compute and time constraints, the current pipelines have been developed and evaluated on a small stratified subset of the full CICIDS2017 dataset. Future work should focus on scaling the training and tuning processes to the entire dataset to potentially improve model robustness and generalization. Additionally, deeper hyperparameter tuning, especially for deep learning models, is necessary to unlock their full potential. Exploring more sophisticated deep learning architectures such as CNNs or advanced ensemble methods could further enhance performance for both binary and multi-class classification tasks.
+### Data & Feature Refinement  
+Given the subset limitation, expanding the dataset size could allow for development of new, domain-specific features and application of more advanced feature selection techniques. Investigating cost-sensitive learning approaches or more refined resampling strategies will help better address class imbalance challenges inherent in the full dataset. This could lead to improved model efficiency and interpretability.
+### Productionization  
+Building a complete end-to-end deployment pipeline remains a priority, including real-time inference, comprehensive model monitoring, and automated retraining workflows. These steps will be crucial to transition from the current proof-of-concept stage—limited by dataset size and tuning scope—to a scalable, practical operational solution suitable for real-world cybersecurity environments.
 
 ---
 

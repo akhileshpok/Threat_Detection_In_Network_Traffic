@@ -24,7 +24,7 @@ The models are highly effective, demonstrating exceptional performance in distin
 ---
 
 ## 📖 Jupyter Notebooks
-Explore the Jupyter notebooks for this project containing the Python code for the ML pipelines, including comments, results, plots, in-depth analysis and insights:
+Explore the Jupyter notebooks for this project containing the Python code for the ML pipelines, including comments, result plots and insights:
 
 - [Data Prep Script](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/Capstone_project_data_prep.ipynb) - This Python script automates the full data preparation and cleaning pipeline for the CICIDS2017 dataset. The code first loads all of the daily CSV files, combines them into a single large DataFrame, and performs initial cleaning steps like standardizing column names and handling infinite or missing values. Finally, it creates two separate, ready-to-use datasets: one for a multiclass classification task that preserves the original attack types, and a second for a binary classification task where all attacks are simplified to a single "malicious" label.
 - [BinaryClass ML pipeline](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/notebooks/CICIDS2017_BinaryClass_Pipeline.ipynb) - Notebook with the Python code for the Binary Class ML pipeline. It includes all stages of the pipeline that are described in the **Project Workflow** section. 
@@ -174,6 +174,78 @@ Cross-validation during stacking training (3-fold stratified K-Fold) implicitly 
 - **Evaluation Metric:** The F1-score for the positive (attack) class was used as the primary metric to balance precision and recall.  
 - **Early Stopping:** For models supporting it (e.g., XGBoost), early stopping was used to prevent overfitting.  
 - **Resource Considerations:** To manage computational cost, the search space was carefully selected based on domain knowledge and prior experiments.  
+
+### Multi-Class Classifier
+
+For the selected multi-class classifier, which is a **Stacking Ensemble**, hyperparameter optimization targeted tuning of individual base learners as well as the meta-learner to maximize overall multi-class predictive performance.
+
+#### Base Learners and Hyperparameters Tuned
+
+**Logistic Regression:**  
+The Logistic Regression base model was tuned using `GridSearchCV` with a pipeline.
+
+- Regularization strength inverse, tested across `[0.01, 0.1, 1, 10, 100]` (`C`)  
+- Solver algorithms supporting multi-class classification tested: `'lbfgs'` and `'saga'` (`solver`)  
+- Penalty set to `'l2'` to ensure robust multi-class performance (`penalty`)  
+- Multi-class strategy set to `'multinomial'` (default with `'lbfgs'`)  
+
+**Random Forest (RF):**  
+The Random Forest base model was tuned using `GridSearchCV` with a pipeline.
+
+- Number of trees, tested at 100, 200, and 300 (`n_estimators`)  
+- Maximum depth of trees, tested at 10, 20, and unlimited (`max_depth`)  
+- Minimum samples required to split a node, tested at 2 and 5 (`min_samples_split`)  
+- Minimum samples required at a leaf node, tested at 1 and 2 (`min_samples_leaf`)  
+- Number of features considered for the best split, tested with `'sqrt'` and `'log2'` (`max_features`)  
+
+**XGBoost:**  
+The XGBoost base model was tuned using `GridSearchCV` with a pipeline.
+
+- Number of boosting rounds, tested at 100 and 200 (`n_estimators`)  
+- Maximum depth of trees, tested at 3 and 5 (`max_depth`)  
+- Step size shrinkage used to prevent overfitting, tested at 0.01 and 0.1 (`learning_rate`)  
+- Subsample ratio of the training instances, tested at 0.7 and 1.0 (`subsample`)  
+- Multi-class objective set to `'multi:softprob'` with appropriate number of classes  
+
+#### Deep Learning Models
+
+**Feedforward Neural Network (FFN):**  
+The FFN model was optimized using a combination of manual tuning and automated hyperparameter search.
+
+- Number of hidden layers, tested between 2 and 4 layers  
+- Number of neurons per layer, ranging from 32 to 256  
+- Activation functions tested included ReLU and LeakyReLU  
+- Dropout rates tested at 0.1, 0.3, and 0.5 to prevent overfitting  
+- Batch size experimented with values 32, 64, and 128  
+- Learning rates tuned between 0.0001 and 0.01 using optimizers such as Adam and RMSprop  
+- Early stopping implemented to halt training when validation loss plateaued  
+
+**Recurrent Neural Network (RNN) / LSTM:**  
+For sequential or time-dependent features, RNNs with LSTM units were utilized and tuned.
+
+- Number of LSTM layers varied between 1 and 3  
+- Hidden units per LSTM layer tested from 50 to 200  
+- Dropout and recurrent dropout rates tested at 0.2 and 0.5  
+- Sequence length input adjusted based on feature representation  
+- Optimizers tested included Adam and RMSprop with learning rates between 0.0001 and 0.01  
+- Early stopping used to prevent overfitting  
+
+#### Meta-Learner
+
+The meta-learner in the stacking ensemble is a **Logistic Regression** model configured for multi-class classification with default parameters. Specific considerations include:
+
+- Multi-class strategy set to `'multinomial'` to handle multiple classes jointly.  
+- Solver configured to `'lbfgs'` for efficient multi-class optimization.  
+- Minimal explicit hyperparameter tuning was performed given the meta-learner’s relatively simple architecture and reliance on base learner outputs.
+
+Cross-validation during stacking training (3-fold stratified K-Fold) ensured generalization of the meta-learner without overfitting. Future improvements could include tuning regularization strength (`C`) or exploring alternative meta-learners better suited for multi-class problems.
+
+#### Optimisation Strategy
+
+- **Grid Search / Random Search:** Hyperparameter combinations were explored via Grid Search or Randomized Search with cross-validation on the training data.  
+- **Evaluation Metric:** The macro-averaged F1-score was used as the primary metric to balance precision and recall across all classes equally.  
+- **Early Stopping:** Applied where supported (e.g., XGBoost, deep learning models) to prevent overfitting during training.  
+- **Resource Considerations:** The search space was narrowed based on domain knowledge and prior experience to balance thoroughness and computational efficiency.
 
 ---
 ## 💡 Key Findings

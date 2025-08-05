@@ -71,6 +71,14 @@ The meta-learner is a Logistic Regression classifier.
 **Validation**: Hold-out test set  
 **Test Dataset**: Representative subset from CICIDS2017
 
+### Metrics:
+- **Accuracy**: 0.98  
+- **Macro F1-score**: 0.93  
+- **Weighted F1-score**: 0.98  
+- **ROC AUC (micro)**: 0.9955  
+- **PR AUC (micro)**: 0.9850  
+- **Composite Rank**: 3.5
+
 - **Classification Report:**
 
 | Class        | Precision | Recall | F1-Score | Support |
@@ -80,14 +88,6 @@ The meta-learner is a Logistic Regression classifier.
 | DoS Hulk     | 0.96      | 0.98   | 0.97     | 325     |
 | PortScan     | 0.99      | 1.00   | 0.99     | 225     |
 | rare_attack  | 0.58      | 0.85   | 0.69     | 55      |
-
-- **Metrics**:
-- **Accuracy**: 0.98  
-- **Macro F1-score**: 0.93  
-- **Weighted F1-score**: 0.98  
-- **ROC AUC (micro)**: 0.9955  
-- **PR AUC (micro)**: 0.9850  
-- **Composite Rank**: 3.5
 
 - **Confusion Matrix:**
 

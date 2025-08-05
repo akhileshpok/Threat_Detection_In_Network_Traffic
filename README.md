@@ -192,7 +192,7 @@ Cross-validation during stacking training (3-fold stratified K-Fold) implicitly 
   </a>
 </p>
 
-- **Top 3 Models:**
+- **Top 3 Models (Binary Class):**
 
 <div align="center">
 
@@ -266,7 +266,66 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
   </a>
 </p>
 
-- **Top 3 Models:**
+- **Top 3 Models (Multi-Class):**
+
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Weighted F1-score</th>
+      <th>Micro-average ROC AUC</th>
+      <th>Micro-average Precision-Recall AP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stacking Classifier</td>
+      <td>0.9837</td>
+      <td>0.9989</td>
+      <td>0.9957</td>
+    </tr>
+    <tr>
+      <td>Random Forest (Untuned)</td>
+      <td>0.9835</td>
+      <td>0.9976</td>
+      <td>0.9929</td>
+    </tr>
+    <tr>
+      <td>Random Forest (Tuned)</td>
+      <td>0.9819</td>
+      <td>0.9988</td>
+      <td>0.9960</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+The top-performing models — **Stacking Classifier**, **Random Forest (Untuned and Tuned)** — demonstrate strong and consistent performance across all key evaluation metrics:
+
+- **Weighted F1-score**: Around **0.98–0.98+**, indicating a well-balanced precision and recall across all classes, including minority ones.
+- **Micro-average ROC AUC**: Approximately **0.999**, showing near-perfect discrimination capability across all classes.
+- **Micro-average Precision-Recall Average Precision (AP)**: Around **0.995+**, indicating excellent predictive performance even with class imbalance.
+
+**Tree-based models (Random Forest and XGBoost)** outperform deep learning approaches (FFN, LSTM), likely due to:
+
+- Limited data size restricting deep model generalization.
+- Deep models needing further tuning and potentially more regularization.
+- Noisy or redundant features that tree-based methods handle better.
+
+**Deep Learning models** show reasonable but lower performance, possibly due to:
+
+- Need for more data or better hyperparameter optimization.
+- Challenges in capturing complex patterns in multi-class network traffic data.
+
+**Logistic Regression** performs the weakest among tested models, likely because:
+
+- Its linear nature limits capturing non-linear and complex attack patterns.
+- Class imbalance affects its sensitivity to minority classes.
+
+**Overall**, the **Stacking Classifier** provides the best combination of robustness and accuracy for multi-class classification on the CICIDS2017 subset and is recommended as the preferred model for deployment.
 
 ---
 

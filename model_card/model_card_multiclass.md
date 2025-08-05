@@ -79,7 +79,7 @@ The meta-learner is a Logistic Regression classifier.
 - **PR AUC (micro)**: 0.9850  
 - **Composite Rank**: 3.5
 
-- **Classification Report:**
+### Classification Report:
 
 | Class        | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|
@@ -89,7 +89,7 @@ The meta-learner is a Logistic Regression classifier.
 | PortScan     | 0.99      | 1.00   | 0.99     | 225     |
 | rare_attack  | 0.58      | 0.85   | 0.69     | 55      |
 
-- **Confusion Matrix:**
+### Confusion Matrix:
 
 | Actual \ Predicted | BENIGN | DDoS | DoS Hulk | PortScan | rare_attack |
 |--------------------|--------|------|----------|----------|-------------|

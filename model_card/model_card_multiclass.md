@@ -48,21 +48,22 @@ The meta-learner is a Logistic Regression classifier.
 
 ## Training Data
 
-- **Dataset**: Subset of CICIDS2017 (official size: 2,827,876 rows, 79 features)
-- **Subset Used**: 19,992 samples (due to time and compute constraints)
-- **Test Size**: 3,999 samples (randomly held out from the subset)
-- **Features**: 78 numerical values  
-- **Classes**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack 
-- **Preprocessing**: Standardization, PCA, SMOTE
-- **Note**: The full dataset was not used for model training or tuning.
+- **Dataset**: Subset of CICIDS2017 (original size: 2,827,876 rows × 79 columns)
+- **Subset used**: 19,992 rows × 78 features (due to compute and time constraints)
+- **Test set size**: 3,999 samples (randomly held out from the subset)
+- **Features**: 78 preprocessed numerical features  
+- **Class labels**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack
+- **Preprocessing**: Standardization, PCA for dimensionality reduction, and SMOTE for class imbalance
+
+> ⚠️ **Note**: The full CICIDS2017 dataset was not used for training or hyperparameter tuning. Model performance reflects evaluation on this smaller subset.
 
 ---
 
 ## Assumptions and Constraints
 
-- Due to limited computational resources and time, only a subset of the CICIDS2017 dataset (19,992 rows) was used for model development and evaluation.
-- As a result, performance metrics reflect outcomes on a constrained dataset and may not be representative of performance on the full dataset or in real-world deployments.
-- This model should be viewed as a proof-of-concept, not as a production-ready intrusion detection system.
+- Only a small, stratified subset of the CICIDS2017 dataset (19,992 samples) was used for the entire modeling pipeline — including preprocessing, training, and tuning — due to limited computational resources and time.
+- Consequently, the reported performance metrics may not generalize to the full dataset or real-world deployment scenarios.
+- The current model serves as a **proof-of-concept** and is **not optimized for production**. Further scaling, retraining on the full dataset, and extensive validation are required before operational use.
 
 ---
 

@@ -60,7 +60,6 @@ This project implements two complete machine learning pipelines to detect networ
 #### 3. Train/Test Split
 - Splits the dataset into:
   - **Training set**
-  - **Validation set**
   - **Test set**
 - Stratified sampling is applied to maintain label balance across splits.
 

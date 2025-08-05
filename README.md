@@ -70,7 +70,7 @@ This project implements two complete machine learning pipelines to detect networ
 - **Class Imbalance Handling:** SMOTE has been used to synthetically balance the training dataset.
 
 #### 5. Classification Task: ML Modeling
-Trains and evaluates the following models:
+Trains and evaluates the following models for both Binary and Multi-Class Classifiers:
 - **Dummy Classifier:** Serves as a naive baseline for comparison.
 - **Logistic Regression**
 - **Random Forest**

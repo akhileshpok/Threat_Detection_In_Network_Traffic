@@ -154,7 +154,7 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 ---
 
 ## 📊 CICIDS2017 Dataset Datasheet
-The Datasheet for the publicly available CICIDS2017 dataset is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
+The Datasheet for the CICIDS2017 dataset that was used in this project is available [here](https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/data_sheet/CICIDS2017_Dataset_Datasheet.md).
 
 ---
 

@@ -427,67 +427,30 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 
 </div>
 
-
-<div align="center">
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>F1-score<br>(Weighted)</th>
-      <th>ROC AUC<br>(Micro-avg)</th>
-      <th>PR AP<br>(Micro-avg)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Stacking</td>
-      <td>0.9837</td>
-      <td>0.9989</td>
-      <td>0.9957</td>
-    </tr>
-    <tr>
-      <td>RF (Untuned)</td>
-      <td>0.9835</td>
-      <td>0.9976</td>
-      <td>0.9929</td>
-    </tr>
-    <tr>
-      <td>RF (Tuned)</td>
-      <td>0.9819</td>
-      <td>0.9988</td>
-      <td>0.9960</td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-
 The top-performing models — **Stacking Classifier**, **Random Forest (Untuned and Tuned)** — demonstrate strong and consistent performance across all key evaluation metrics:
 
-- **Weighted F1-score**: Around **0.98–0.98+**, indicating a well-balanced precision and recall across all classes, including minority ones.
-- **Micro-average ROC AUC**: Approximately **0.999**, showing near-perfect discrimination capability across all classes.
-- **Micro-average Precision-Recall Average Precision (AP)**: Around **0.995+**, indicating excellent predictive performance even with class imbalance.
+- **Weighted F1-score**: In the range of **0.9864–0.9875**, indicating a well-balanced precision and recall across all classes, including minority ones.
+- **Micro-average ROC AUC**: Approximately **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
+- **Micro-average Precision-Recall Average Precision (AP)**: Between **0.9943–0.9983**, reflecting excellent predictive performance even in the presence of class imbalance.
 
 **Tree-based models (Random Forest and XGBoost)** outperform deep learning approaches (FFN, LSTM), likely due to:
 
-- Limited data size restricting deep model generalization.
-- Deep models needing further tuning and potentially more regularization.
-- Noisy or redundant features that tree-based methods handle better.
+- Their robustness to noisy and redundant features often present in network traffic data.
+- Deep models requiring more data, further tuning, or regularization to generalize effectively.
+- Simpler tree ensembles capturing class boundaries more efficiently in this specific problem space.
 
-**Deep Learning models** show reasonable but comparatively lower performance, which may be attributed to several factors:
+**Deep Learning models** show reasonable but comparatively lower performance. Despite effective hyperparameter tuning, their performance remains behind tree-based methods, potentially due to:
 
-- The dataset size and class imbalance may limit the ability of deep models to generalize effectively.
-- Although hyperparameter tuning improved their performance, further optimization or architectural enhancements (e.g., CNNs, attention mechanisms) might be necessary.
-- Capturing complex and subtle patterns in multi-class network traffic data remains challenging, particularly for models sensitive to noisy or redundant features.
+- Dataset size and imbalance limiting deep model generalization.
+- Need for architectural improvements (e.g., CNNs, attention mechanisms) to better capture temporal and structural dependencies.
+- Sensitivity to noise and redundancy in high-dimensional feature spaces.
 
-**Logistic Regression** performs the weakest among tested models, likely because:
+**Logistic Regression** performs the weakest among tested models, primarily due to:
 
-- Its linear nature limits capturing non-linear and complex attack patterns.
-- Class imbalance affects its sensitivity to minority classes.
+- Inability to model non-linear or complex decision boundaries.
+- Vulnerability to class imbalance, especially for minority attack classes.
 
-Overall, the **Stacking Ensemble** provides the best combination of robustness and accuracy for **multi-class classification** on the CICIDS2017 subset and is recommended as the preferred model for deployment.
+Overall, the **Stacking Ensemble** provides the best trade-off between **robustness, generalization, and interpretability**, making it the recommended model for **multi-class intrusion detection** using the CICIDS2017 subset.
 
 ---
 

@@ -430,7 +430,7 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 The top-performing models — **Stacking Classifier**, **Random Forest (Untuned and Tuned)** — demonstrate strong and consistent performance across all key evaluation metrics:
 
 - **Weighted F1-score**: In the range of **0.9864–0.9875**, indicating a well-balanced precision and recall across all classes, including minority ones.
-- **Micro-average ROC AUC**: Approximately **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
+- **Micro-average ROC AUC**: In the range of **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
 - **Micro-average Precision-Recall Average Precision (AP)**: Between **0.9943–0.9983**, reflecting excellent predictive performance even in the presence of class imbalance.
 
 **Tree-based models (Random Forest and XGBoost)** outperform deep learning approaches (FFN, LSTM), likely due to:

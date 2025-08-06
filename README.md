@@ -313,8 +313,8 @@ Cross-validation during stacking training (3-fold stratified K-Fold) ensured gen
 - **Resource Considerations:** The search space was narrowed based on domain knowledge and prior experience to balance thoroughness and computational efficiency.
 
 ---
-## 💡 Key Findings
-### Key Results and Findings for the Binary Classifier
+## 💡 Results & Key Findings
+###  Binary Classifier
 #### ROC Curve Comparison:
 <p align="center">
   <a href="Binary ROC Curves">
@@ -392,7 +392,7 @@ The **Deep Learning (DL)** models show decent results but lag behind tree-based 
 
 Overall, the **Stacking Ensemble** offers the best combination of metrics and is the preferred model for deployment in the **binary classification** task.
 
-### Key Results and Findings for the Multi-Class Classifier
+### Multi-Class Classifier
 #### ROC Curve Comparison:
 <p align="center">
   <a href="Multi ROC Curves">

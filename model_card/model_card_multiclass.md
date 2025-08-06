@@ -87,7 +87,7 @@ The test set of 9,999 samples was then randomly held out from this stratified su
 
 ## Performance
 
-### Metrics 
+### Metrics: 
 - **Accuracy**: 0.99  
 - **Macro F1-score**: 0.94  
 - **Weighted F1-score**: 0.99  
@@ -96,7 +96,7 @@ The test set of 9,999 samples was then randomly held out from this stratified su
 
 - **Composite Rank**: 3.5
 
-### Classification Report
+### Classification Report:
 
 | Class        | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|

@@ -379,14 +379,14 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
 - **ROC Curves Comparison:** 
 <p align="center">
   <a href="Multi ROC Curves">
-    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_roc_curve_comparison.png" alt="ROC Curves Comparison" width="800" />
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_micro_roc_curve_comparison.png" alt="ROC Curves Comparison" width="800" />
   </a>
 </p>
 
 - **Precision Recall Curves Comparison:** 
 <p align="center">
   <a href="Multi PrecRecall Curves">
-    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_precision_recall_curve_comparison.png" alt="Prec-Recall Curves Comparison" width="800" />
+    <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_micro_pr_curve_comparison.png" alt="Prec-Recall Curves Comparison" width="800" />
   </a>
 </p>
 

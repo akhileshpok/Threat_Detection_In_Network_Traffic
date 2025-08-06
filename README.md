@@ -440,10 +440,11 @@ The top-performing models — **Stacking Classifier**, **Random Forest (Untuned 
 - Deep models needing further tuning and potentially more regularization.
 - Noisy or redundant features that tree-based methods handle better.
 
-**Deep Learning models** show reasonable but lower performance, possibly due to:
+**Deep Learning models** show reasonable but comparatively lower performance, which may be attributed to several factors:
 
-- Need for more data or better hyperparameter optimization.
-- Challenges in capturing complex patterns in multi-class network traffic data.
+- The dataset size and class imbalance may limit the ability of deep models to generalize effectively.
+- Although hyperparameter tuning improved their performance, further optimization or architectural enhancements (e.g., CNNs, attention mechanisms) might be necessary.
+- Capturing complex and subtle patterns in multi-class network traffic data remains challenging, particularly for models sensitive to noisy or redundant features.
 
 **Logistic Regression** performs the weakest among tested models, likely because:
 

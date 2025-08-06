@@ -34,7 +34,7 @@ Explore the Jupyter notebooks accompanying this project, which include Python co
   
 ## ⚙️ Project Workflow
 
-### CICIDS2017 Binary Classification, Multi-Class Classicification Pipelines:
+### Binary Classification & Multi-Class Classicification Pipelines:
 
 This project implements two complete machine learning pipelines to detect network intrusions using the CICIDS2017 dataset. The pipelines are composed of the following stages:
 

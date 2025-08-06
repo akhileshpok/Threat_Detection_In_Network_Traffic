@@ -119,7 +119,6 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 
 #### 8. Model Selection
 - Selects the best model based on a **composite rank across multiple performance metrics**, ensuring a balanced evaluation by combining different aspects of model effectiveness—such as discrimination ability, precision-recall trade-offs, and overall classification accuracy—thereby identifying the model that consistently performs well across all key criteria.
-
 - Metrics considered:
   - ROC AUC (Micro-Avg)
   - PR AP (Micro-Avg)

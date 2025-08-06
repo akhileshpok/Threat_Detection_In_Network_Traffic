@@ -405,6 +405,42 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
   </thead>
   <tbody>
     <tr>
+      <td>Random Forest (Untuned)</td>
+      <td>0.9875</td>
+      <td>0.9981</td>
+      <td>0.9943</td>
+    </tr>
+    <tr>
+      <td>Stacking Classifier</td>
+      <td>0.9869</td>
+      <td>0.9994</td>
+      <td>0.9983</td>
+    </tr>
+    <tr>
+      <td>Random Forest (Tuned)</td>
+      <td>0.9864</td>
+      <td>0.9994</td>
+      <td>0.9983</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>F1-score<br>(Weighted)</th>
+      <th>ROC AUC<br>(Micro-avg)</th>
+      <th>PR AP<br>(Micro-avg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>Stacking</td>
       <td>0.9837</td>
       <td>0.9989</td>

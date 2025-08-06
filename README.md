@@ -405,19 +405,19 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
   </thead>
   <tbody>
     <tr>
-      <td>Stacking Classifier</td>
+      <td>Stacking</td>
       <td>0.9837</td>
       <td>0.9989</td>
       <td>0.9957</td>
     </tr>
     <tr>
-      <td>Random Forest (Untuned)</td>
+      <td>RF (Untuned)</td>
       <td>0.9835</td>
       <td>0.9976</td>
       <td>0.9929</td>
     </tr>
     <tr>
-      <td>Random Forest (Tuned)</td>
+      <td>RF (Tuned)</td>
       <td>0.9819</td>
       <td>0.9988</td>
       <td>0.9960</td>

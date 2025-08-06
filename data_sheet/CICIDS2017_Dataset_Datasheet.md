@@ -94,4 +94,4 @@ Please check the dataset's official page for licensing terms. Typically, this da
 
 *This datasheet is intended to provide a thorough understanding of the CICIDS2017 dataset for researchers and practitioners in cybersecurity and machine learning.*
 
-*For more information, visit the Canadian Institute for Cybersecurity’s official CICIDS2017 [page](https://www.unb.ca/cic/datasets/ids-2017.html)
+*For more information, visit the Canadian Institute for Cybersecurity’s official CICIDS2017 [page](https://www.unb.ca/cic/datasets/ids-2017.html).

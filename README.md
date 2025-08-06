@@ -111,15 +111,22 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 - **(e)** Uses the `Optuna` library to optimize the LSTM model for temporal feature learning.
 
 #### 7. Comparative Performance Evaluation
-- Assesses all models on validation and test sets using:
+- Assesses all models on the test set using:
   - Accuracy, Precision, Recall, F1-score (macro & weighted)
   - Confusion Matrix
   - ROC and Precision-Recall curves
 - Visualizes metric comparisons using bar charts and performance plots.
 
 #### 8. Model Selection
-- Selects the best model based on macro-averaged F1-score.
-- Logs the final model name and saves its predictions and probabilities.
+- Selects the best model based on a **composite rank across multiple performance metrics**.
+- **Metrics considered**:
+  - **ROC AUC (Micro-Avg)**
+  - **PR AP (Micro-Avg)**
+  - **F1-score (Weighted-Avg)**
+- Each model is ranked for every selected metric (**higher is better**), and the **sum of ranks** determines the overall **Composite_Rank**.
+- The model with the **lowest composite rank** is selected as the **best overall performer**.
+- Logs the selected model's name and saves its predictions and probabilities. 
+
 
 #### 9. Model Interpretation
 - Uses the `SHAP` library to interpret predictions of the best model.

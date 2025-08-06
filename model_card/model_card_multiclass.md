@@ -4,7 +4,7 @@
 
 - **Model Name**: Stacking Classifier (Multi-Class)
 - **Version**: 1.0  
-- **Date**: 05-08-2025  
+- **Date**: 06-08-2025  
 - **Model Type**: Ensemble Stacking Classifier  
 - **Framework**: scikit-learn  
 - **Owner/Creator**: Akhilesh Pokhariyal  
@@ -59,13 +59,13 @@ The meta-learner is a Logistic Regression classifier.
 
 ### Data Sampling and Split Methodology
 
-Due to computational and time constraints, a stratified subset of approximately 20,000 samples was created from the full CICIDS2017 dataset. This was achieved by:
+Due to computational and time constraints, a stratified subset of approximately 50,000 samples was created from the full CICIDS2017 dataset. This was achieved by:
 
 - Calculating the proportion of each class in the original dataset.
 - Sampling a fixed number of rows per class proportional to these original class distributions.
 - This stratified sampling ensured that the subset maintained class distribution representative of the full dataset within the limited sample size.
 
-The test set of 3,999 samples was then randomly held out from this stratified subset, ensuring consistent class proportions in both training and test sets.
+The test set of 9,999 samples was then randomly held out from this stratified subset, ensuring consistent class proportions in both training and test sets.
 
 ### Preprocessing
 
@@ -79,7 +79,7 @@ The test set of 3,999 samples was then randomly held out from this stratified su
 
 ## Assumptions and Constraints
 
-- Only a small, stratified subset of the CICIDS2017 dataset (19,992 samples) was used for the entire modeling pipeline — including preprocessing, training, and tuning — due to limited computational resources and time.
+- Only a small, stratified subset of the CICIDS2017 dataset (49,992 samples) was used for the entire modeling pipeline — including preprocessing, training, and tuning — due to limited computational resources and time.
 - Consequently, the reported performance metrics may not generalize to the full dataset or real-world deployment scenarios.
 - The current model serves as a **proof-of-concept** and is **not optimized for production**. Further scaling, retraining on the full dataset, and extensive validation are required before operational use.
 
@@ -87,37 +87,33 @@ The test set of 3,999 samples was then randomly held out from this stratified su
 
 ## Performance
 
-**Validation**: Hold-out test set  
-**Test Dataset**: Representative subset from CICIDS2017
-**Test set size**: 3,999 samples from the stratified subset
-
-### Metrics:
-- **Accuracy**: 0.98  
-- **Macro F1-score**: 0.93  
-- **Weighted F1-score**: 0.98  
-- **ROC AUC (micro)**: 0.9955  
-- **PR AUC (micro)**: 0.9850  
+### Metrics (Final - Stacking Classifier)
+- **Accuracy**: 0.99  
+- **Macro F1-score**: 0.94  
+- **Weighted F1-score**: 0.99  
+- **ROC AUC (Micro Avg)**: 0.9955  
+- **PR AUC (Micro Avg)**: 0.9850  
 - **Composite Rank**: 3.5
 
-### Classification Report:
+### Classification Report
 
 | Class        | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|
-| BENIGN       | 1.00      | 0.98   | 0.99     | 3213    |
-| DDoS         | 0.98      | 0.98   | 0.98     | 181     |
-| DoS Hulk     | 0.96      | 0.98   | 0.97     | 325     |
-| PortScan     | 0.99      | 1.00   | 0.99     | 225     |
-| rare_attack  | 0.58      | 0.85   | 0.69     | 55      |
+| BENIGN       | 1.00      | 0.99   | 0.99     | 8032    |
+| DDoS         | 0.98      | 0.99   | 0.99     | 453     |
+| DoS Hulk     | 0.97      | 0.99   | 0.98     | 814     |
+| PortScan     | 0.99      | 0.99   | 0.99     | 561     |
+| rare_attack  | 0.64      | 0.94   | 0.76     | 139     |
 
 ### Confusion Matrix:
 
 | Actual \ Predicted | BENIGN | DDoS | DoS Hulk | PortScan | rare_attack |
 |--------------------|--------|------|----------|----------|-------------|
-| **BENIGN**         | 3160   | 3    | 13       | 3        | 34          |
-| **DDoS**           | 3      | 178  | 0        | 0        | 0           |
-| **DoS Hulk**       | 5      | 0    | 320      | 0        | 0           |
-| **PortScan**       | 0      | 0    | 0        | 225      | 0           |
-| **rare_attack**    | 6      | 0    | 2        | 0        | 47          |
+| **BENIGN**         | 7917   | 10    | 26       | 7        | 72         |
+| **DDoS**           | 3      | 450   | 0        | 0        | 0          |
+| **DoS Hulk**       | 8      | 0     | 806      | 0        | 0          |
+| **PortScan**       | 2      | 0     | 1        | 558      | 0          |
+| **rare_attack**    | 8      | 0     | 1        | 0        | 130        |
 
 
 ---

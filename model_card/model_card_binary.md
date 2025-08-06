@@ -49,6 +49,15 @@ The model is an ensemble Stacking Classifier combining multiple base learners (e
 
 > ⚠️ **Note**: Due to significant computational and time constraints, the entire model pipeline — including preprocessing, training, hyperparameter tuning, and evaluation — was conducted on a **subset** of the original dataset. The subset was carefully sampled to preserve the original class distribution while reducing processing time. Therefore, the reported performance metrics reflect this sampled subset and may vary when applied to the full dataset or real-world traffic.
 
+### Data Sampling and Split Methodology
+
+Due to computational and time constraints, a stratified subset of approximately 283,000 samples was created from the full CICIDS2017 dataset. This was achieved by:
+
+- Calculating the proportion of each class in the original dataset.
+- Sampling a fixed number of rows per class proportional to these original class distributions.
+- This stratified sampling ensured that the subset maintained class distribution representative of the full dataset within the limited sample size.
+
+The test set of 56,558 samples was then randomly held out from this stratified subset, ensuring consistent class proportions in both training and test sets.
 ---
 
 ## Performance

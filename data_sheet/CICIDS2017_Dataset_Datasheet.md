@@ -54,7 +54,7 @@ The data was collected using network traffic capture tools over multiple days in
 
 ## Distribution
 
-The dataset is publicly available on the Canadian Institute for Cybersecurity website and on Kaggle. The data can be downloaded in CSV format for ease of use with machine learning frameworks.
+The dataset is publicly available on the Canadian Institute for Cybersecurity [website](https://www.unb.ca/cic/datasets/ids-2017.html) and on Kaggle. The data can be downloaded in CSV format for ease of use with machine learning frameworks.
 
 ## Usage
 

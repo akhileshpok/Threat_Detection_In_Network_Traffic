@@ -433,7 +433,7 @@ The top-performing models — **Stacking Classifier**, **Random Forest (Untuned 
 - **Micro-average ROC AUC**: Approximately **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
 - **Micro-average Precision-Recall Average Precision (AP)**: Between **0.9943–0.9983**, reflecting excellent predictive performance even in the presence of class imbalance.
 
-### Per-Class Performance Highlights
+#### Per-Class Performance Highlights
 
 The top models not only perform well overall, but also excel across individual attack classes:
 
@@ -441,7 +441,7 @@ The top models not only perform well overall, but also excel across individual a
 - **PortScan** and **DDoS** are also predicted with high confidence (ROC AUC ~0.998+, AP ~0.995) by most top models.
 - **rare_attack** class — the most challenging due to its sparsity — still achieves high ROC AUC (~0.99+) and AP (~0.89–0.92) with **Stacking**, **RF (Tuned)**, and **XGBoost (Tuned)**, showing strong minority class sensitivity.
 
-### Model Family Observations
+#### Model Family Observations
 
 **Tree-based models (Random Forest and XGBoost)** consistently outperform deep learning and linear models, likely due to:
 
@@ -460,7 +460,7 @@ The top models not only perform well overall, but also excel across individual a
 - Inability to model complex, non-linear relationships.
 - Sensitivity to class imbalance, especially without advanced weighting strategies.
 
-### Final Recommendation
+#### Final Recommendation
 
 The **Stacking Ensemble** model offers the best combination of **robustness**, **per-class accuracy**, and **overall predictive strength**, making it the most suitable candidate for deployment in **multi-class intrusion detection systems** using the CICIDS2017 dataset.
 

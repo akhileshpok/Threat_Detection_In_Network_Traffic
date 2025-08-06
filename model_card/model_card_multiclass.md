@@ -122,7 +122,7 @@ The test set of 9,999 samples was then randomly held out from this stratified su
 ## Limitations
 
 - Trained exclusively on the CICIDS2017 dataset; may not generalize well to other network environments.
-- Model trained on a small subset (~0.7%) of the original CICIDS2017 dataset, which may impact generalizability to the full spectrum of attack types and network traffic behaviors.
+- Model trained on a small subset (~1.8%) of the original CICIDS2017 dataset, which may impact generalizability to the full spectrum of attack types and network traffic behaviors.
 - Performance on rare_attack class is limited by data sparsity.
 - Additional work needed for real-time inference.
 - Relies on specific preprocessing pipeline (PCA, SMOTE).

@@ -366,6 +366,8 @@ Cross-validation during stacking training (3-fold stratified K-Fold) ensured gen
 
 </div>
 
+#### Model Family Observations:
+
 The top-performing models (**Stacking, Random Forest, XGBoost**) perform exceptionally well across all key metrics:
 
 - **F1-score (Positive Class):** ~0.986 — very high, indicating excellent precision and recall balance.
@@ -385,6 +387,8 @@ The **Deep Learning (DL)** models show decent results but lag behind tree-based 
 - Linear assumptions limit ability to model non-linear patterns.
 - Class imbalance affects performance.
 - It’s less capable of capturing complex traffic behaviors.
+
+#### Final Recommendation:
 
 Overall, the **Stacking Ensemble** offers the best combination of metrics and is the preferred model for deployment in the **binary classification** task.
 

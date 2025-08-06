@@ -118,6 +118,12 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 - Visualizes metric comparisons using bar charts and performance plots.
 
 #### 8. Model Selection
+##### Binary Classifier  
+- Selects the best model based on the **F1-score for the positive class**, focusing on balancing precision and recall to handle class imbalance effectively.  
+- This approach prioritizes the metric most relevant for binary classification where identifying the positive class correctly is critical (e.g., fraud detection, intrusion detection).    
+- Logs the selected model’s name and saves it for reproducibility and downstream usage.  
+
+##### Multi-Class Classifier
 - Selects the best model based on a **composite rank across multiple performance metrics**, ensuring a balanced evaluation by combining different aspects of model effectiveness—such as discrimination ability, precision-recall trade-offs, and overall classification accuracy—thereby identifying the model that consistently performs well across all key criteria.
 - Metrics considered:
   - ROC AUC (Micro-Avg)

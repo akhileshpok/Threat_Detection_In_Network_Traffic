@@ -302,21 +302,21 @@ Cross-validation during stacking training (3-fold stratified K-Fold) ensured gen
 ---
 ## 💡 Key Findings
 ### Key Results and Findings for the Binary Classifier
-- **ROC Curve Comparison:** 
+#### ROC Curve Comparison:
 <p align="center">
   <a href="Binary ROC Curves">
     <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/roc_curve_comparison.png" alt="ROC Curves Comparison" width="800" />
   </a>
 </p>
 
-- **Precision Recall Curve Comparison:** 
+#### Precision Recall Curve Comparison: 
 <p align="center">
   <a href="Binary PrecRecall Curves">
     <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/precision_recall_curve_comparison.png" alt="Prec-Recall Curves Comparison" width="800" />
   </a>
 </p>
 
-- **Top 3 Models (Binary Class):**
+#### Top 3 Models (Binary Class):
 
 <div align="center">
 
@@ -376,21 +376,21 @@ The **Deep Learning (DL)** models show decent results but lag behind tree-based 
 Overall, the **Stacking Ensemble** offers the best combination of metrics and is the preferred model for deployment in the **binary classification** task.
 
 ### Key Results and Findings for the Multi-Class Classifier
-- **ROC Curve Comparison:** 
+#### ROC Curve Comparison:
 <p align="center">
   <a href="Multi ROC Curves">
     <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_micro_roc_curve_comparison.png" alt="ROC Curves Comparison" width="800" />
   </a>
 </p>
 
-- **Precision Recall Curve Comparison:** 
+#### Precision Recall Curve Comparison: 
 <p align="center">
   <a href="Multi PrecRecall Curves">
     <img src="https://github.com/akhileshpok/Threat_Detection_In_Network_Traffic/blob/main/images/multi_micro_pr_curve_comparison.png" alt="Prec-Recall Curves Comparison" width="800" />
   </a>
 </p>
 
-- **Top 3 Models (Multi-Class):**
+#### Top 3 Models (Multi-Class):
 
 <div align="center">
 
@@ -433,7 +433,7 @@ The top-performing models — **Stacking Classifier**, **Random Forest (Untuned 
 - **Micro-average ROC AUC**: Approximately **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
 - **Micro-average Precision-Recall Average Precision (AP)**: Between **0.9943–0.9983**, reflecting excellent predictive performance even in the presence of class imbalance.
 
-#### Per-Class Performance Highlights
+#### Per-Class Performance Highlights:
 
 The top models not only perform well overall, but also excel across individual attack classes:
 
@@ -441,7 +441,7 @@ The top models not only perform well overall, but also excel across individual a
 - **PortScan** and **DDoS** are also predicted with high confidence (ROC AUC ~0.998+, AP ~0.995) by most top models.
 - **rare_attack** class — the most challenging due to its sparsity — still achieves high ROC AUC (~0.99+) and AP (~0.89–0.92) with **Stacking**, **RF (Tuned)**, and **XGBoost (Tuned)**, showing strong minority class sensitivity.
 
-#### Model Family Observations
+#### Model Family Observations:
 
 **Tree-based models (Random Forest and XGBoost)** consistently outperform deep learning and linear models, likely due to:
 
@@ -460,36 +460,9 @@ The top models not only perform well overall, but also excel across individual a
 - Inability to model complex, non-linear relationships.
 - Sensitivity to class imbalance, especially without advanced weighting strategies.
 
-#### Final Recommendation
+#### Final Recommendation:
 
 The **Stacking Ensemble** model offers the best combination of **robustness**, **per-class accuracy**, and **overall predictive strength**, making it the most suitable candidate for deployment in **multi-class intrusion detection systems** using the CICIDS2017 dataset.
-
-
-
-The top-performing models — **Stacking Classifier**, **Random Forest (Untuned and Tuned)** — demonstrate strong and consistent performance across all key evaluation metrics:
-
-- **Weighted F1-score**: In the range of **0.9864–0.9875**, indicating a well-balanced precision and recall across all classes, including minority ones.
-- **Micro-average ROC AUC**: In the range of **0.9981–0.9994**, showing near-perfect discrimination capability across all classes.
-- **Micro-average Precision-Recall Average Precision (AP)**: Between **0.9943–0.9983**, reflecting excellent predictive performance even in the presence of class imbalance.
-
-**Tree-based models (Random Forest and XGBoost)** outperform deep learning approaches (FFN, LSTM), likely due to:
-
-- Their robustness to noisy and redundant features often present in network traffic data.
-- Deep models requiring more data, further tuning, or regularization to generalize effectively.
-- Simpler tree ensembles capturing class boundaries more efficiently in this specific problem space.
-
-**Deep Learning models** show reasonable but comparatively lower performance. Despite effective hyperparameter tuning, their performance remains behind tree-based methods, potentially due to:
-
-- Dataset size and imbalance limiting deep model generalization.
-- Need for architectural improvements (e.g., CNNs, attention mechanisms) to better capture temporal and structural dependencies.
-- Sensitivity to noise and redundancy in high-dimensional feature spaces.
-
-**Logistic Regression** performs the weakest among tested models, primarily due to:
-
-- Inability to model non-linear or complex decision boundaries.
-- Vulnerability to class imbalance, especially for minority attack classes.
-
-Overall, the **Stacking Ensemble** provides the best trade-off between **robustness, generalization, and interpretability**, making it the recommended model for **multi-class intrusion detection** using the CICIDS2017 subset.
 
 ---
 

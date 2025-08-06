@@ -92,7 +92,8 @@ The test set of 9,999 samples was then randomly held out from this stratified su
 - **Macro F1-score**: 0.94  
 - **Weighted F1-score**: 0.99  
 - **ROC AUC (Micro Avg)**: 0.9955  
-- **PR AUC (Micro Avg)**: 0.9850  
+- **PR AUC (Micro Avg)**: 0.9850
+
 - **Composite Rank**: 3.5
 
 ### Classification Report

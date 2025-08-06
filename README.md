@@ -398,41 +398,6 @@ Overall, the **Stacking Ensemble** offers the best combination of metrics and is
   <thead>
     <tr>
       <th>Model</th>
-      <th>Weighted F1-score</th>
-      <th>Micro-average ROC AUC</th>
-      <th>Micro-average Precision-Recall AP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Stacking</td>
-      <td>0.9837</td>
-      <td>0.9989</td>
-      <td>0.9957</td>
-    </tr>
-    <tr>
-      <td>RF (Untuned)</td>
-      <td>0.9835</td>
-      <td>0.9976</td>
-      <td>0.9929</td>
-    </tr>
-    <tr>
-      <td>RF (Tuned)</td>
-      <td>0.9819</td>
-      <td>0.9988</td>
-      <td>0.9960</td>
-    </tr>
-  </tbody>
-</table>
-
-</div>
-
-<div align="center">
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
       <th>F1-score<br>(Weighted)</th>
       <th>ROC AUC<br>(Micro-avg)</th>
       <th>PR AP<br>(Micro-avg)</th>

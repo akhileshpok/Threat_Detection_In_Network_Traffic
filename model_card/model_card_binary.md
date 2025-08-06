@@ -56,7 +56,6 @@ Due to computational and time constraints, a stratified subset of approximately 
 - Calculating the proportion of each class in the original dataset.
 - Sampling a fixed number of rows per class proportional to these original class distributions.
 - This stratified sampling ensured that the subset maintained class distribution representative of the full dataset within the limited sample size.
-
 The test set of 56,558 samples was then randomly held out from this stratified subset, ensuring consistent class proportions in both training and test sets.
 ---
 

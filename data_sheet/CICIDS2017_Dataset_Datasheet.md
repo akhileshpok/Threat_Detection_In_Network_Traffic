@@ -13,7 +13,7 @@ The dataset was created to facilitate research on network intrusion detection by
 ## Dataset Composition
 
 - **Instances:** Approximately 2.8 million network flows.
-- **Features:** Over 80 features per flow, including flow duration, protocol, source/destination IP and ports, packet counts, bytes, and various statistical features.
+- **Features:** Around 80 features per flow, including flow duration, protocol, source/destination IP and ports, packet counts, bytes, and various statistical features.
 - **Labels:** Each flow is labeled as benign or belonging to one of several attack categories.
 
 ## Labels and Class Distribution

@@ -120,10 +120,10 @@ Trains and evaluates the following models for both **Binary** and **Multi-Class*
 #### 8. Model Selection
 - Selects the best model based on a **composite rank across multiple performance metrics**.
 - **Metrics considered**:
-  - **ROC AUC (Micro-Avg)**
-  - **PR AP (Micro-Avg)**
-  - **F1-score (Weighted-Avg)**
-- Each model is ranked for every selected metric (**higher is better**), and the **sum of ranks** determines the overall **Composite_Rank**.
+  - ROC AUC (Micro-Avg)
+  - PR AP (Micro-Avg)
+  - F1-score (Weighted-Avg)
+- Each model is ranked for every selected metric (higher is better), and the **sum of ranks** determines the overall **Composite Rank**.
 - The model with the **lowest composite rank** is selected as the **best overall performer**.
 - Logs the selected model's name and saves its predictions and probabilities. 
 

@@ -49,8 +49,8 @@ The meta-learner is a Logistic Regression classifier.
 
 - **Dataset**: Subset of the CICIDS2017 intrusion detection dataset  
 - **Original dataset size**: 2,827,876 rows × 79 columns  
-- **Subset size used for modeling**: 19,992 rows × 78 features  
-- **Test set size**: 3,999 samples  
+- **Subset size used for modeling**: 49,992 rows × 78 features  
+- **Test set size**: 9,999 samples  
 - **Class labels**: BENIGN, DDoS, DoS Hulk, PortScan, rare_attack  
 - **Preprocessing**: PCA for dimensionality reduction, SMOTE for class imbalance, and standard normalization
 - **Data source**: [CICIDS2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
